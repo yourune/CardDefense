@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e1b95005a51d1c4aac18653c817a0d6, type: 3}
+  m_Name: Hero Preview Config
+  m_EditorClassIdentifier: 
+  <Records>k__BackingField:
+  - <Race>k__BackingField: 0
+    <Frame>k__BackingField: {fileID: 21300000, guid: 7a21b314b1b72504fa4938a0a1f5bb6d, type: 3}
+    <RaceLabel>k__BackingField: Elf
+    <RaceTextColor>k__BackingField: {r: 0, g: 0, b: 0, a: 1}
+  - <Race>k__BackingField: 1
+    <Frame>k__BackingField: {fileID: 21300000, guid: 3e8d5a00fc8cd2042ac94168da0ff1fb, type: 3}
+    <RaceLabel>k__BackingField: Sea Alien
+    <RaceTextColor>k__BackingField: {r: 0, g: 0, b: 0, a: 1}

@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: d8904f377f9749d8ab141ddd61c1bad1
+timeCreated: 1733130932
+AssetOrigin:
+  serializedVersion: 1
+  productId: 284361
+  packageName: "Card Game Core \u2013 TCG/CCG System with Deck Builder"
+  packageVersion: 2.4.2
+  assetPath: Assets/BG Games/Card Game Core/Source/Scripts/Systems/PlayerProfile/Models/MatchData.cs
+  uploadId: 861974

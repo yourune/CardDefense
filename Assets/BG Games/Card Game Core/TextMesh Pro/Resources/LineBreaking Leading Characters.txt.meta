@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 9ad8ea2fa7a77714588c0cfbd05c1c7f
+timeCreated: 1425440388
+licenseType: Store
+TextScriptImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 284361
+  packageName: "Card Game Core \u2013 TCG/CCG System with Deck Builder"
+  packageVersion: 2.4.2
+  assetPath: Assets/BG Games/Card Game Core/TextMesh Pro/Resources/LineBreaking Leading
+    Characters.txt
+  uploadId: 861974

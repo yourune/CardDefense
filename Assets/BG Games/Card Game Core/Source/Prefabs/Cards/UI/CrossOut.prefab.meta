@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: d98c5de5fb551b244a4461e09afae63b
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 284361
+  packageName: "Card Game Core \u2013 TCG/CCG System with Deck Builder"
+  packageVersion: 2.4.2
+  assetPath: Assets/BG Games/Card Game Core/Source/Prefabs/Cards/UI/CrossOut.prefab
+  uploadId: 861974

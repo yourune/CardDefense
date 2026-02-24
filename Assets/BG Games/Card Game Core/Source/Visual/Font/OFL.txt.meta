@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: b2c581af32753ee41b6a0088700bc882
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 284361
+  packageName: "Card Game Core \u2013 TCG/CCG System with Deck Builder"
+  packageVersion: 2.4.2
+  assetPath: Assets/BG Games/Card Game Core/Source/Visual/Font/OFL.txt
+  uploadId: 861974

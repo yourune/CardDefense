@@ -1,0 +1,249 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Card Localization_de
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: de
+  m_SharedData: {fileID: 11400000, guid: 090106d381808d74d95fd2dea645a69d, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 112309411840
+    m_Localized: "Elysia Fl\xFCsterblatt"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45095690240
+    m_Localized: "F\xFCge dem Feind 2 Schaden zu"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1105495871848448
+    m_Localized: Waldgeneral
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1105537592590336
+    m_Localized: Pfeilhagel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1109343747309568
+    m_Localized: Elf
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1109371819786240
+    m_Localized: Meeresfremder
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1110290024235008
+    m_Localized: Empowerment-Schub
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1110248014086144
+    m_Localized: Kommandant der Seefremden
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1110216468725760
+    m_Localized: Xanthor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1110173695213568
+    m_Localized: "Verst\xE4rke die Einheit +1/+1 bis zu deinem n\xE4chsten Zug"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1113271796891648
+    m_Localized: Baumartiger Lohenwerfer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1113365308899328
+    m_Localized: "F\xFCge einer gegnerischen Einheit 3 \u200B\u200BSchaden und benachbarten
+      Einheiten 2 Schaden zu"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1113391762374656
+    m_Localized: "Baldachin-Zertr\xFCmmerer"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1113533190111232
+    m_Localized: "F\xFCge dem Feind 3 Schaden zu"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1113596339552256
+    m_Localized: Arzneimittelverabreichung
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1113640669151232
+    m_Localized: "Heile alle verb\xFCndeten Einheiten um 2 Punkte"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1113749154824192
+    m_Localized: Lieferungen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1113789856350208
+    m_Localized: 2 Karten ziehen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1113996157386752
+    m_Localized: Zerfallsstrahl
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1114027933433856
+    m_Localized: "F\xFCge dem Feind 5 Schaden zu"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1114274470428672
+    m_Localized: Erneuerungsimpuls
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1114375842562048
+    m_Localized: "Heile alle verb\xFCndeten Einheiten mit 1 Punkt"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1114553823657984
+    m_Localized: Starburst-Kaskade
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1114578821709824
+    m_Localized: "F\xFCge der gegnerischen Einheit und benachbarten Einheiten 3 Schaden
+      zu."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1114707138052096
+    m_Localized: Versorgungssignal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1114734719795200
+    m_Localized: 2 Karten ziehen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1114917465620480
+    m_Localized: "K\xE4mpferin"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1114939548631040
+    m_Localized: Aufladung
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1114980011081728
+    m_Localized: "Sch\xFCtzin"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1115086051475456
+    m_Localized: Heimlichkeit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1115150819917824
+    m_Localized: Medizin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1115177457942528
+    m_Localized: Heileinheit 2 Punkte
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1115229836410880
+    m_Localized: "Eichenw\xE4chter"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1115256109531136
+    m_Localized: Spott
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1115336174600192
+    m_Localized: Soldatin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1115430840041472
+    m_Localized: "Abgr\xFCndiges Fl\xFCstergeist"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1115508048789504
+    m_Localized: Heimlichkeit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1115559655505920
+    m_Localized: Korallenspalten-Leviathan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1115594791190528
+    m_Localized: Aufladung
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1115635324944384
+    m_Localized: Gezeitengeborener Resonator
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1115672167710720
+    m_Localized: "Heile Einheit f\xFCr 2 Punkte"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1115709585096704
+    m_Localized: "Tsunami-Verw\xFCster"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1118506594467840
+    m_Localized: Xenotrooper
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1118555382611968
+    m_Localized: ' '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1118647493722112
+    m_Localized: ' '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1456759405912064
+    m_Localized: Spott
+    m_Metadata:
+      m_Items: []
+  - m_Id: 171797351661518848
+    m_Localized: Ram
+    m_Metadata:
+      m_Items: []
+  - m_Id: 171797500546727936
+    m_Localized: Kavallerie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 171797951795118080
+    m_Localized: Ritter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 171798069059469312
+    m_Localized: Bandage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 171798180795727872
+    m_Localized: Knappe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 171797412667670528
+    m_Localized: "F\xFCge dem Feind 4 Schaden zu"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 171797546717626368
+    m_Localized: Aufladung
+    m_Metadata:
+      m_Items: []
+  - m_Id: 171797997898907648
+    m_Localized: Spott
+    m_Metadata:
+      m_Items: []
+  - m_Id: 171798107395407872
+    m_Localized: "Heile Einheit f\xFCr 2 Punkte"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 171798217118400512
+    m_Localized: ' '
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

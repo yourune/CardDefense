@@ -1,0 +1,252 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Card Localization Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: Card Localization
+  m_TableCollectionNameGuidString: 090106d381808d74d95fd2dea645a69d
+  m_Entries:
+  - m_Id: 45095690240
+    m_Key: CardDesc_ElysiaWhisperleaf
+    m_Metadata:
+      m_Items: []
+  - m_Id: 112309411840
+    m_Key: CardName_ElysiaWhisperleaf
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1105495871848448
+    m_Key: CardAlias_ElysiaWhisperleaf
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1105537592590336
+    m_Key: CardAbility_ElysiaWhisperleaf
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1109343747309568
+    m_Key: RaceLabel_Human
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1109371819786240
+    m_Key: RaceLabel_Allien
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1110173695213568
+    m_Key: CardDesc_Xanthor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1110216468725760
+    m_Key: CardName_Xanthor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1110248014086144
+    m_Key: CardAlias_Xanthor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1110290024235008
+    m_Key: CardAbility_Xanthor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1113271796891648
+    m_Key: CardName_ArborealBlazecaster
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1113365308899328
+    m_Key: CardDesc_ArborealBlazecaster
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1113391762374656
+    m_Key: CardName_CanopyShatterer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1113533190111232
+    m_Key: CardDesc_CanopyShatterer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1113596339552256
+    m_Key: CardName_DrugDelivery
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1113640669151232
+    m_Key: CardDesc_DrugDelivery
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1113749154824192
+    m_Key: CardName_Supplies
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1113789856350208
+    m_Key: CardDesc_Supplies
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1113996157386752
+    m_Key: CardName_DecayRay
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1114027933433856
+    m_Key: CardDesc_DecayRay
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1114274470428672
+    m_Key: CardName_RenewalPulse
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1114375842562048
+    m_Key: CardDesc_RenewalPulse
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1114553823657984
+    m_Key: CardName_StarburstCascade
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1114578821709824
+    m_Key: CardDesc_StarburstCascade
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1114707138052096
+    m_Key: CardName_SupplyBeacon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1114734719795200
+    m_Key: CardDesc_SupplyBeacon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1114917465620480
+    m_Key: CardName_Fighter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1114939548631040
+    m_Key: CardDesc_Fighter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1114980011081728
+    m_Key: CardName_Marksman
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1115086051475456
+    m_Key: CardDesc_Marksman
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1115150819917824
+    m_Key: CardName_Medic
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1115177457942528
+    m_Key: CardDesc_Medic
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1115229836410880
+    m_Key: CardName_OakGuardian
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1115256109531136
+    m_Key: CardDesc_OakGuardian
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1115336174600192
+    m_Key: CardName_Soldier
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1115430840041472
+    m_Key: CardName_AbyssalWhisperwraith
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1115508048789504
+    m_Key: CardDesc_AbyssalWhisperwraith
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1115559655505920
+    m_Key: CardName_CoralriftLeviathan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1115594791190528
+    m_Key: CardDesc_CoralriftLeviathan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1115635324944384
+    m_Key: CardName_TidebornResonator
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1115672167710720
+    m_Key: CardDesc_TidebornResonator
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1115709585096704
+    m_Key: CardName_TsunamiRavager
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1118506594467840
+    m_Key: CardName_Xenotrooper
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1118555382611968
+    m_Key: CardDesc_Xenotrooper
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1118647493722112
+    m_Key: CardDesc_Soldier
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1456759405912064
+    m_Key: CardDesc_TsunamiRavager
+    m_Metadata:
+      m_Items: []
+  - m_Id: 171797351661518848
+    m_Key: CardName_Ram
+    m_Metadata:
+      m_Items: []
+  - m_Id: 171797412667670528
+    m_Key: CardDesc_Ram
+    m_Metadata:
+      m_Items: []
+  - m_Id: 171797500546727936
+    m_Key: CardName_Cavalry
+    m_Metadata:
+      m_Items: []
+  - m_Id: 171797546717626368
+    m_Key: CardDesc_Cavalry
+    m_Metadata:
+      m_Items: []
+  - m_Id: 171797951795118080
+    m_Key: CardName_Knight
+    m_Metadata:
+      m_Items: []
+  - m_Id: 171797997898907648
+    m_Key: CardDesc_Knight
+    m_Metadata:
+      m_Items: []
+  - m_Id: 171798069059469312
+    m_Key: CardName_Repair
+    m_Metadata:
+      m_Items: []
+  - m_Id: 171798107395407872
+    m_Key: CardDesc_Repair
+    m_Metadata:
+      m_Items: []
+  - m_Id: 171798180795727872
+    m_Key: CardName_Squire
+    m_Metadata:
+      m_Items: []
+  - m_Id: 171798217118400512
+    m_Key: CardDesc_Squire
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 1396640952148819969
+  references:
+    version: 2
+    RefIds:
+    - rid: 1396640952148819969
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1721996798825

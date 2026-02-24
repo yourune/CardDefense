@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 179480cc4f8040a0a70e0b4782cef231
+timeCreated: 1733141364
+AssetOrigin:
+  serializedVersion: 1
+  productId: 284361
+  packageName: "Card Game Core \u2013 TCG/CCG System with Deck Builder"
+  packageVersion: 2.4.2
+  assetPath: Assets/BG Games/Card Game Core/Source/Scripts/Systems/PlayerProfile/ProfileWindow/AvatarSelectionView.cs
+  uploadId: 861974

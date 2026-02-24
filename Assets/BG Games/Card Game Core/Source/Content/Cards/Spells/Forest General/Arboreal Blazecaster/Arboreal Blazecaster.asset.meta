@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 4560024e0489b064db01e3c560be27b7
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 284361
+  packageName: "Card Game Core \u2013 TCG/CCG System with Deck Builder"
+  packageVersion: 2.4.2
+  assetPath: Assets/BG Games/Card Game Core/Source/Content/Cards/Spells/Forest General/Arboreal
+    Blazecaster/Arboreal Blazecaster.asset
+  uploadId: 861974

@@ -1,0 +1,249 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Card Localization_fr
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: fr
+  m_SharedData: {fileID: 11400000, guid: 090106d381808d74d95fd2dea645a69d, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 112309411840
+    m_Localized: Elysia Feuille-de-murmure
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45095690240
+    m_Localized: "Inflige 2 points de d\xE9g\xE2ts \xE0 l'ennemi"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1105495871848448
+    m_Localized: "G\xE9n\xE9ral de la for\xEAt"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1105537592590336
+    m_Localized: "Pluie de fl\xE8ches"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1109343747309568
+    m_Localized: Elfe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1109371819786240
+    m_Localized: Extraterrestre de la mer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1110290024235008
+    m_Localized: Une vague d'autonomisation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1110248014086144
+    m_Localized: Commandant extraterrestre des mers
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1110216468725760
+    m_Localized: Xanthor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1110173695213568
+    m_Localized: "Augmentez l'unit\xE9 +1/+1 jusqu'\xE0 votre prochain tour"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1113271796891648
+    m_Localized: Lance-flammes arboricole
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1113365308899328
+    m_Localized: "Inflige 3 points de d\xE9g\xE2ts \xE0 une unit\xE9 ennemie et 2
+      points de d\xE9g\xE2ts aux unit\xE9s adjacentes"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1113391762374656
+    m_Localized: "Briseur de canop\xE9e"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1113533190111232
+    m_Localized: "Inflige 3 points de d\xE9g\xE2ts \xE0 l'ennemi"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1113596339552256
+    m_Localized: "L'administration de m\xE9dicaments"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1113640669151232
+    m_Localized: "Soignez toutes les unit\xE9s alli\xE9es pour 2 points"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1113749154824192
+    m_Localized: Fournitures
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1113789856350208
+    m_Localized: Piochez 2 cartes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1113996157386752
+    m_Localized: "Rayon de d\xE9composition"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1114027933433856
+    m_Localized: "Inflige 5 points de d\xE9g\xE2ts \xE0 l'ennemi"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1114274470428672
+    m_Localized: Pouls de renouvellement
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1114375842562048
+    m_Localized: "Soignez toutes les unit\xE9s alli\xE9es avec 1 point"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1114553823657984
+    m_Localized: "Cascade \xE9toil\xE9e"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1114578821709824
+    m_Localized: "Inflige 3 points de d\xE9g\xE2ts \xE0 l'unit\xE9 ennemie et aux
+      unit\xE9s adjacentes"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1114707138052096
+    m_Localized: Balise d'approvisionnement
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1114917465620480
+    m_Localized: Combattante
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1114734719795200
+    m_Localized: Piochez 2 cartes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1114939548631040
+    m_Localized: Charge
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1114980011081728
+    m_Localized: Buteur
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1115086051475456
+    m_Localized: "Furtivit\xE9"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1115150819917824
+    m_Localized: "M\xE9dicale"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1115177457942528
+    m_Localized: "Soignez l'unit\xE9 2 points"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1115229836410880
+    m_Localized: "Gardien du ch\xEAne"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1115256109531136
+    m_Localized: Raillerie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1115336174600192
+    m_Localized: Soldate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1115430840041472
+    m_Localized: Spectre murmureur abyssal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1115559655505920
+    m_Localized: "L\xE9viathan de Coralrift"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1115508048789504
+    m_Localized: "Furtivit\xE9"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1115594791190528
+    m_Localized: Charge
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1115635324944384
+    m_Localized: "R\xE9sonateur Tideborn"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1115672167710720
+    m_Localized: "Soignez l'unit\xE9 pour 2 points"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1115709585096704
+    m_Localized: Ravagateur du tsunami
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1118506594467840
+    m_Localized: "X\xE9notrooper"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1118555382611968
+    m_Localized: ' '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1118647493722112
+    m_Localized: ' '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1456759405912064
+    m_Localized: Raillerie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 171797351661518848
+    m_Localized: "B\xE9lier"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 171797500546727936
+    m_Localized: Cavalerie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 171797951795118080
+    m_Localized: Chevalier
+    m_Metadata:
+      m_Items: []
+  - m_Id: 171798069059469312
+    m_Localized: Bandage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 171798180795727872
+    m_Localized: "\xC9cuyer"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 171797412667670528
+    m_Localized: "Inflige 4 points de d\xE9g\xE2ts \xE0 l'ennemi"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 171797546717626368
+    m_Localized: Charge
+    m_Metadata:
+      m_Items: []
+  - m_Id: 171797997898907648
+    m_Localized: Raillerie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 171798107395407872
+    m_Localized: "Soignez l'unit\xE9 pour 2 points"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 171798217118400512
+    m_Localized: ' '
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

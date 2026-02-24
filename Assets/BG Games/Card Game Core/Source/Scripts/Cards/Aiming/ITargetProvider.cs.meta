@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: de9d1e513b78f5a45a6f88f118ab7a89
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 284361
+  packageName: "Card Game Core \u2013 TCG/CCG System with Deck Builder"
+  packageVersion: 2.4.2
+  assetPath: Assets/BG Games/Card Game Core/Source/Scripts/Cards/Aiming/ITargetProvider.cs
+  uploadId: 861974

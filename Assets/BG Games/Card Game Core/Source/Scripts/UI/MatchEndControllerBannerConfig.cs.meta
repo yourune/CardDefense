@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: b623ad3c845d43989a075d9f47ebc75b
+timeCreated: 1731427055
+AssetOrigin:
+  serializedVersion: 1
+  productId: 284361
+  packageName: "Card Game Core \u2013 TCG/CCG System with Deck Builder"
+  packageVersion: 2.4.2
+  assetPath: Assets/BG Games/Card Game Core/Source/Scripts/UI/MatchEndControllerBannerConfig.cs
+  uploadId: 861974

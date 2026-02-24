@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: f11780bff8404c0f9401f0659284a5f5
+timeCreated: 1734687280
+AssetOrigin:
+  serializedVersion: 1
+  productId: 284361
+  packageName: "Card Game Core \u2013 TCG/CCG System with Deck Builder"
+  packageVersion: 2.4.2
+  assetPath: Assets/BG Games/Card Game Core/Source/Scripts/Systems/PlayerProfile/Events/DeleteProfileEvent.cs
+  uploadId: 861974

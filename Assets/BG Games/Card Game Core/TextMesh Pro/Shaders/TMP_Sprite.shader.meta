@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: f85cfec64065e7e45b2fb4f32e465682
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 284361
+  packageName: "Card Game Core \u2013 TCG/CCG System with Deck Builder"
+  packageVersion: 2.4.2
+  assetPath: Assets/BG Games/Card Game Core/TextMesh Pro/Shaders/TMP_Sprite.shader
+  uploadId: 861974

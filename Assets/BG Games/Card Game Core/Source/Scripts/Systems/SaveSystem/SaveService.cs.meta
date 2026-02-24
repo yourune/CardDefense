@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 5c88ec93c09e494d9fd9f7b5e3dc8fa5
+timeCreated: 1733137297
+AssetOrigin:
+  serializedVersion: 1
+  productId: 284361
+  packageName: "Card Game Core \u2013 TCG/CCG System with Deck Builder"
+  packageVersion: 2.4.2
+  assetPath: Assets/BG Games/Card Game Core/Source/Scripts/Systems/SaveSystem/SaveService.cs
+  uploadId: 861974

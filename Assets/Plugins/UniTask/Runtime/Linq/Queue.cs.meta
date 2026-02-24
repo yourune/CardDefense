@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: b7ea1bcf9dbebb042bc99c7816249e02
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 284361
+  packageName: "Card Game Core \u2013 TCG/CCG System with Deck Builder"
+  packageVersion: 2.4.2
+  assetPath: Assets/Plugins/UniTask/Runtime/Linq/Queue.cs
+  uploadId: 861974

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 453b0c6074095434fbd0e3da4f3686ee
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 284361
+  packageName: "Card Game Core \u2013 TCG/CCG System with Deck Builder"
+  packageVersion: 2.4.2
+  assetPath: Assets/BG Games/Card Game Core/Source/Content/Cards/Units/Forest General/Soldier/Soldier.asset
+  uploadId: 861974

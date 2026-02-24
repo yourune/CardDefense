@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2d64f4838c0ee94883404cda755ee05, type: 3}
+  m_Name: Cards View Config
+  m_EditorClassIdentifier: 
+  <ViewPresets>k__BackingField:
+  - Race: 0
+    BackView: {fileID: 21300000, guid: b01edd48b11589848b87847bfdfa81f4, type: 3}
+    HeroView: {fileID: 21300000, guid: 7a21b314b1b72504fa4938a0a1f5bb6d, type: 3}
+    UnitView: {fileID: 21300000, guid: e6ec915086c0b734db130470f8a5fdb3, type: 3}
+    SpellView: {fileID: 21300000, guid: e6ec915086c0b734db130470f8a5fdb3, type: 3}
+    InnerFrameView: {fileID: 21300000, guid: 4d6e74755a7b39c428909b7a23829240, type: 3}
+  - Race: 1
+    BackView: {fileID: 21300000, guid: d1a9897627a0a1e40b948f95ff601cff, type: 3}
+    HeroView: {fileID: 21300000, guid: 3e8d5a00fc8cd2042ac94168da0ff1fb, type: 3}
+    UnitView: {fileID: 21300000, guid: 57339b32ca5e07640b636d95407ec615, type: 3}
+    SpellView: {fileID: 21300000, guid: 57339b32ca5e07640b636d95407ec615, type: 3}
+    InnerFrameView: {fileID: 21300000, guid: 7f6e9296d35b848459abe71896ecce62, type: 3}
+  - Race: 2
+    BackView: {fileID: 21300000, guid: 4b5133a0d6d55d4448f6be57a47451e1, type: 3}
+    HeroView: {fileID: 21300000, guid: 3e8d5a00fc8cd2042ac94168da0ff1fb, type: 3}
+    UnitView: {fileID: 21300000, guid: 01c0b1239a4b7874c8ad6cf893929115, type: 3}
+    SpellView: {fileID: 21300000, guid: 01c0b1239a4b7874c8ad6cf893929115, type: 3}
+    InnerFrameView: {fileID: 21300000, guid: 616d71be983bd044f92566c0b6ada4c3, type: 3}

@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 2a30af60cc0523941af2525aa05fc724
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 284361
+  packageName: "Card Game Core \u2013 TCG/CCG System with Deck Builder"
+  packageVersion: 2.4.2
+  assetPath: Assets/BG Games/Card Game Core/TextMesh Pro/Shaders/TMP_SDF-Mobile Masking.shader
+  uploadId: 861974

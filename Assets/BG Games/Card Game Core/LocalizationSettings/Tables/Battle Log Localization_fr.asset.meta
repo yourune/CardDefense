@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: c1989c34afcf8db48af68b294c6e5774
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 284361
+  packageName: "Card Game Core \u2013 TCG/CCG System with Deck Builder"
+  packageVersion: 2.4.2
+  assetPath: Assets/BG Games/Card Game Core/LocalizationSettings/Tables/Battle Log
+    Localization_fr.asset
+  uploadId: 861974

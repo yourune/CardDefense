@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: a9ed8c19ae5ee6f4d9fb9ee3fead1d69
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 284361
+  packageName: "Card Game Core \u2013 TCG/CCG System with Deck Builder"
+  packageVersion: 2.4.2
+  assetPath: Assets/BG Games/Card Game Core/Source/Prefabs/UI/Currency/GoldCoins.prefab
+  uploadId: 861974

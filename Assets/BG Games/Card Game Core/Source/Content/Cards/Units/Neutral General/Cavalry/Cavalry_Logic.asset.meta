@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 45d9f0c6d4cb2404c8da12a5b7297bce
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 284361
+  packageName: "Card Game Core \u2013 TCG/CCG System with Deck Builder"
+  packageVersion: 2.4.2
+  assetPath: Assets/BG Games/Card Game Core/Source/Content/Cards/Units/Neutral General/Cavalry/Cavalry_Logic.asset
+  uploadId: 861974

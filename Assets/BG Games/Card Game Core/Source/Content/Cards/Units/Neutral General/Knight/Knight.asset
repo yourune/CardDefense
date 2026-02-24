@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f1b138b7eb137047907366afd46d9e6, type: 3}
+  m_Name: Knight
+  m_EditorClassIdentifier: Assembly-CSharp::BG_Games.Card_Game_Core.Cards.Info.UnitCardInfo
+  <Id>k__BackingField: ac98e4b75a6dcca418efd53e154c7172
+  <Name>k__BackingField:
+    m_TableReference:
+      m_TableCollectionName: GUID:090106d381808d74d95fd2dea645a69d
+    m_TableEntryReference:
+      m_KeyId: 171797951795118080
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  <Description>k__BackingField:
+    m_TableReference:
+      m_TableCollectionName: GUID:090106d381808d74d95fd2dea645a69d
+    m_TableEntryReference:
+      m_KeyId: 171797997898907648
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  <Image>k__BackingField: {fileID: 7699529146656932291, guid: a05308e98d6478447aec8594d0af9e81, type: 3}
+  <Race>k__BackingField: 2
+  <Rarity>k__BackingField: 1
+  <Cost>k__BackingField: 4
+  <Hero>k__BackingField: {fileID: 0}
+  <GoldPrice>k__BackingField: 2
+  <DP>k__BackingField: 4
+  <HP>k__BackingField: 4
+  <LogicFactory>k__BackingField: {fileID: 11400000, guid: 5258f43b8aeceed42b8f35530c84991d, type: 2}
+  references:
+    version: 2
+    RefIds: []

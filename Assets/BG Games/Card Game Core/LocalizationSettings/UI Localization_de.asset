@@ -1,0 +1,185 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: UI Localization_de
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: de
+  m_SharedData: {fileID: 11400000, guid: 21f83d0ca0350744ea4a03df382fad6e, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 58379051008
+    m_Localized: Neues Spiel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34402103566336
+    m_Localized: Karten-Sammlung
+    m_Metadata:
+      m_Items: []
+  - m_Id: 35092431478784
+    m_Localized: Master Sound
+    m_Metadata:
+      m_Items: []
+  - m_Id: 35582812725248
+    m_Localized: Sprache
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38160774569984
+    m_Localized: PC
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38193548861440
+    m_Localized: Spielprotokoll
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38226939715584
+    m_Localized: Endrunde
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38458582736896
+    m_Localized: Ziehen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38481559134208
+    m_Localized: Ausfahrt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38564644102144
+    m_Localized: Karten neu ziehen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38605848944640
+    m_Localized: "Best\xE4tigen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38723306233856
+    m_Localized: "Starthand, Sie k\xF6nnen Karten neu ziehen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1093218691055616
+    m_Localized: Suchen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1093540754882560
+    m_Localized: Spielen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1093711349809152
+    m_Localized: Rasse
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1202277079449600
+    m_Localized: Du bist dran
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1202317743226880
+    m_Localized: Gegnerischer Zug
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1442245146943488
+    m_Localized: Typ
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1442270878998528
+    m_Localized: Zweig
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1442367490596864
+    m_Localized: "W\xE4hlen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1442403083460608
+    m_Localized: Neues Deck
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1541383561781248
+    m_Localized: Ja
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1541427815882752
+    m_Localized: Nein
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1541442646941696
+    m_Localized: "M\xF6chten Sie dieses Deck wirklich <color=#f95a5a>dauerhaft</color>
+      l\xF6schen?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1553170164195328
+    m_Localized: Einheit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1553208143618048
+    m_Localized: Fluch
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1553230121771008
+    m_Localized: Menschlich
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1553277035061248
+    m_Localized: Fremde
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1556714648870912
+    m_Localized: Gewinnen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1556756818403328
+    m_Localized: Verlust
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2264493957160960
+    m_Localized: Speichern
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2264872866390016
+    m_Localized: Deck
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47149617613742080
+    m_Localized: Spieler-Profil
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53301476338540544
+    m_Localized: "M\xF6chten Sie Ihr Spielerprofil wirklich <color=#f95a5a>dauerhaft</color>
+      l\xF6schen?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58391106310217728
+    m_Localized: Statistik
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58391167605776384
+    m_Localized: Siege
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58391203207028736
+    m_Localized: Verlusten
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58391232265166848
+    m_Localized: Ziehungen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 169290815898861568
+    m_Localized: Neutral
+    m_Metadata:
+      m_Items: []
+  - m_Id: 169683662502313984
+    m_Localized: "F\xFCr {0} Gold kaufen?"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

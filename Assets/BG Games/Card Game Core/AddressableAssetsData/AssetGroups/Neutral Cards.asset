@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Neutral Cards
+  m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
+  m_GroupName: Neutral Cards
+  m_GUID: 56bf2827cd415784c97b9086b1b4ebc9
+  m_SerializeEntries:
+  - m_GUID: 483c7f4ad162e76479e047a0de4209dc
+    m_Address: 483c7f4ad162e76479e047a0de4209dc
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - card
+    - neutral
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8ca7b71627bf5aa4eae5ea00a3587b6d
+    m_Address: 8ca7b71627bf5aa4eae5ea00a3587b6d
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - card
+    - neutral
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 93ddb18699a023d4b81db0cabf8d51f8
+    m_Address: 93ddb18699a023d4b81db0cabf8d51f8
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - card
+    - neutral
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 994be83c3df2ed540b02d731dddea0b6
+    m_Address: 994be83c3df2ed540b02d731dddea0b6
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - card
+    - neutral
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ac98e4b75a6dcca418efd53e154c7172
+    m_Address: ac98e4b75a6dcca418efd53e154c7172
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - card
+    - neutral
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 85af52cc6aa0152428ca693fbc47ce2c, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 636b395574421b941860a5b40f867f92, type: 2}
+    - {fileID: 11400000, guid: bc04e9a0097faa645b0c7987479f0118, type: 2}

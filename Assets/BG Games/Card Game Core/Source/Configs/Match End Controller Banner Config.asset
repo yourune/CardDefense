@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b623ad3c845d43989a075d9f47ebc75b, type: 3}
+  m_Name: Match End Controller Banner Config
+  m_EditorClassIdentifier: 
+  <Banners>k__BackingField:
+  - Type: 0
+    Banner: {fileID: 21300000, guid: 92699256aeedad244b8e15a6734a85df, type: 3}
+    Text:
+      m_TableReference:
+        m_TableCollectionName: GUID:21f83d0ca0350744ea4a03df382fad6e
+      m_TableEntryReference:
+        m_KeyId: 1556714648870912
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+  - Type: 1
+    Banner: {fileID: 21300000, guid: 420a60946cade174b84f57ee8621b90a, type: 3}
+    Text:
+      m_TableReference:
+        m_TableCollectionName: GUID:21f83d0ca0350744ea4a03df382fad6e
+      m_TableEntryReference:
+        m_KeyId: 1556756818403328
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+  - Type: 2
+    Banner: {fileID: 21300000, guid: 7603fb6201d3dd6498f7c1649e3f691d, type: 3}
+    Text:
+      m_TableReference:
+        m_TableCollectionName: GUID:21f83d0ca0350744ea4a03df382fad6e
+      m_TableEntryReference:
+        m_KeyId: 38458582736896
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+  references:
+    version: 2
+    RefIds: []

@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: AIDecks
+  m_EditorClassIdentifier: 
+  m_GroupName: AIDecks
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 05d7f5dde410b22438230151ebc08275
+  m_SerializeEntries:
+  - m_GUID: e575bf895fa729a40a2eb7c7caf36b5b
+    m_Address: Main Human
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - deckAI
+    - human
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 93be2d4bccd7047419dfe6409a2d7bd3
+    m_Address: Main Allien
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - deckAI
+    - allien
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 85af52cc6aa0152428ca693fbc47ce2c, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: b1f6bf14227f4eb4a9a2e141a1a7e4f9, type: 2}
+    - {fileID: 11400000, guid: 3e4b4032c8bf199469c645acf1d10f95, type: 2}

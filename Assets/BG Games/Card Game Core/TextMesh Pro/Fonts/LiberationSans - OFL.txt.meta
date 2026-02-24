@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 41b5f54f2a2d41d47b107e447ff054f7
+timeCreated: 1484171296
+licenseType: Store
+TextScriptImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 284361
+  packageName: "Card Game Core \u2013 TCG/CCG System with Deck Builder"
+  packageVersion: 2.4.2
+  assetPath: Assets/BG Games/Card Game Core/TextMesh Pro/Fonts/LiberationSans - OFL.txt
+  uploadId: 861974

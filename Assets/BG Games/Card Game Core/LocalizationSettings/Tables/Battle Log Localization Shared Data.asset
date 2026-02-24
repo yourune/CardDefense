@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Battle Log Localization Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: Battle Log Localization
+  m_TableCollectionNameGuidString: 2e5ac330886f942448270ed8d80e3b9e
+  m_Entries:
+  - m_Id: 37281701888
+    m_Key: Log_OpponentName
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103618813952
+    m_Key: Log_PlayCard
+    m_Metadata:
+      m_Items: []
+  - m_Id: 111101452288
+    m_Key: Log_HeroAbility
+    m_Metadata:
+      m_Items: []
+  - m_Id: 120261812224
+    m_Key: Log_PlayerName
+    m_Metadata:
+      m_Items: []
+  - m_Id: 212645552128
+    m_Key: Log_Attack
+    m_Metadata:
+      m_Items: []
+  - m_Id: 221063520256
+    m_Key: Log_HeroAbilityOnCard
+    m_Metadata:
+      m_Items: []
+  - m_Id: 229015920640
+    m_Key: Log_Spell
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 1396641063265894416
+  references:
+    version: 2
+    RefIds:
+    - rid: 1396641063265894416
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1722426766583

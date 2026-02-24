@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3630c9d77ef82ba44a97d7111aea3b92, type: 3}
+  m_Name: Arboreal Blazecaster
+  m_EditorClassIdentifier: 
+  <Id>k__BackingField: 4560024e0489b064db01e3c560be27b7
+  <Name>k__BackingField:
+    m_TableReference:
+      m_TableCollectionName: GUID:090106d381808d74d95fd2dea645a69d
+    m_TableEntryReference:
+      m_KeyId: 1113271796891648
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  <Description>k__BackingField:
+    m_TableReference:
+      m_TableCollectionName: GUID:090106d381808d74d95fd2dea645a69d
+    m_TableEntryReference:
+      m_KeyId: 1113365308899328
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  <Image>k__BackingField: {fileID: 21300000, guid: 3c8b963192ee27744bc7deb40253e1ce, type: 3}
+  <Race>k__BackingField: 0
+  <Rarity>k__BackingField: 2
+  <Cost>k__BackingField: 5
+  <Hero>k__BackingField: {fileID: 11400000, guid: a83fd9bdde3598c4b8bb4237cff3cd6e, type: 2}
+  <GoldPrice>k__BackingField: 1
+  <LogicFactory>k__BackingField: {fileID: 11400000, guid: 31a65a9025e295c488e7f1eaaa57c204, type: 2}
+  <SFX>k__BackingField: {fileID: 8300000, guid: 78b0f1850ac9a6d4fb195b8f45e8d3b8, type: 3}
+  references:
+    version: 2
+    RefIds: []

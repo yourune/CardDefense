@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3630c9d77ef82ba44a97d7111aea3b92, type: 3}
+  m_Name: Supply Beacon
+  m_EditorClassIdentifier: 
+  <Id>k__BackingField: ebf90e28044d7f645abebc1ac51d4d77
+  <Name>k__BackingField:
+    m_TableReference:
+      m_TableCollectionName: GUID:090106d381808d74d95fd2dea645a69d
+    m_TableEntryReference:
+      m_KeyId: 1114707138052096
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  <Description>k__BackingField:
+    m_TableReference:
+      m_TableCollectionName: GUID:090106d381808d74d95fd2dea645a69d
+    m_TableEntryReference:
+      m_KeyId: 1114734719795200
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  <Image>k__BackingField: {fileID: 21300000, guid: 59f0058c0df3da04182e501958bddfb7, type: 3}
+  <Race>k__BackingField: 1
+  <Rarity>k__BackingField: 0
+  <Cost>k__BackingField: 2
+  <Hero>k__BackingField: {fileID: 11400000, guid: 33ae1e801b92bd6428ffe35722f72d81, type: 2}
+  <GoldPrice>k__BackingField: 1
+  <LogicFactory>k__BackingField: {fileID: 11400000, guid: 939912cb98ae8aa4f91a52eae4b91406, type: 2}
+  <SFX>k__BackingField: {fileID: 8300000, guid: e05d44d1797723340b669eed62d254c2, type: 3}
+  references:
+    version: 2
+    RefIds: []

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: cfd1827c4aad5924d8c0eafa7ca9ce76
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 284361
+  packageName: "Card Game Core \u2013 TCG/CCG System with Deck Builder"
+  packageVersion: 2.4.2
+  assetPath: Assets/BG Games/Card Game Core/Source/Content/Cards/Spells/Forest General/Supplies/Supply_logic.asset
+  uploadId: 861974

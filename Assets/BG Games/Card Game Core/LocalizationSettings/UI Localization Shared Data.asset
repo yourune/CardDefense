@@ -1,0 +1,188 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: UI Localization Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: UI Localization
+  m_TableCollectionNameGuidString: 21f83d0ca0350744ea4a03df382fad6e
+  m_Entries:
+  - m_Id: 58379051008
+    m_Key: Button_NewGame
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34402103566336
+    m_Key: Button_CardCollection
+    m_Metadata:
+      m_Items: []
+  - m_Id: 35092431478784
+    m_Key: Label_MasterSound
+    m_Metadata:
+      m_Items: []
+  - m_Id: 35582812725248
+    m_Key: Label_Language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38160774569984
+    m_Key: Label_Username
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38193548861440
+    m_Key: Label_GameLog
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38226939715584
+    m_Key: Label_EndTurn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38458582736896
+    m_Key: Label_Draw
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38481559134208
+    m_Key: Label_Exit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38564644102144
+    m_Key: Label_RedrawCards
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38605848944640
+    m_Key: Label_Confirm
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38723306233856
+    m_Key: Label_RedrawCardsDescription
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1093218691055616
+    m_Key: Label_Search
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1093540754882560
+    m_Key: Label_Play
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1093711349809152
+    m_Key: Label_Race
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1202277079449600
+    m_Key: Label_YourTurn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1202317743226880
+    m_Key: Label_EnemyTurn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1442245146943488
+    m_Key: Option_Type
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1442270878998528
+    m_Key: Option_Branch
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1442367490596864
+    m_Key: Label_Choose
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1442403083460608
+    m_Key: Label_NewDeck
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1541383561781248
+    m_Key: Label_Yes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1541427815882752
+    m_Key: Label_No
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1541442646941696
+    m_Key: Label_ConfirmDeletion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1553170164195328
+    m_Key: Option_Unit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1553208143618048
+    m_Key: Option_Spell
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1553230121771008
+    m_Key: Option_Human
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1553277035061248
+    m_Key: Option_Allien
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1556714648870912
+    m_Key: Label_Win
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1556756818403328
+    m_Key: Label_Defeat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2264493957160960
+    m_Key: Label_Save
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2264872866390016
+    m_Key: Label_Deck
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47149617613742080
+    m_Key: Label_PlayerProfile
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53301476338540544
+    m_Key: Label_ConfirmProfileDeletion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58391106310217728
+    m_Key: Label_Statistics
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58391167605776384
+    m_Key: Label_Wins
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58391203207028736
+    m_Key: Label_Losses
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58391232265166848
+    m_Key: Label_Draws
+    m_Metadata:
+      m_Items: []
+  - m_Id: 169290815898861568
+    m_Key: Option_Neutral
+    m_Metadata:
+      m_Items: []
+  - m_Id: 169683662502313984
+    m_Key: Label_Buy_Card_For
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 1396640947099664409
+  references:
+    version: 2
+    RefIds:
+    - rid: 1396640947099664409
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1721977940230

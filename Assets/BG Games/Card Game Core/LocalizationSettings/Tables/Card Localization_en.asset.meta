@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b06defb02242c8f408648c4cde38cd54
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 284361
+  packageName: "Card Game Core \u2013 TCG/CCG System with Deck Builder"
+  packageVersion: 2.4.2
+  assetPath: Assets/BG Games/Card Game Core/LocalizationSettings/Tables/Card Localization_en.asset
+  uploadId: 861974
