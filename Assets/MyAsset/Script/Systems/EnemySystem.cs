@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class EnemySystem : Singleton<EnemySystem>
 {
@@ -9,17 +10,19 @@ public class EnemySystem : Singleton<EnemySystem>
     [SerializeField] private float moveSpeed = 2f;
     [SerializeField] private float spawnInterval = 2f;
 
-    private List<EnemyView> activeEnemies = new List<EnemyView>();
+    public List<EnemyView> activeEnemies = new List<EnemyView>();
     private float castleXPosition;
 
     void OnEnable()
     {
         ActionSystem.AttachPerformer<AttackCastleGA>(AttackCastlePerformer);
+        ActionSystem.AttachPerformer<KillEnemyGA>(KillEnemyPerformer);
     }
 
     void OnDisable()
     {
         ActionSystem.DetachPerformer<AttackCastleGA>();
+        ActionSystem.DetachPerformer<KillEnemyGA>();
     }
 
     private void Start()
@@ -97,7 +100,7 @@ public class EnemySystem : Singleton<EnemySystem>
             Debug.Log("Enemy reached castle!");
         }
         
-        Destroy(enemy.gameObject);
+        enemy.transform.DOScale(Vector3.zero, 0.25f).OnComplete(() => Destroy(enemy.gameObject));
     }
 
     private IEnumerator AttackCastlePerformer(AttackCastleGA attackCastleGA)
@@ -108,5 +111,13 @@ public class EnemySystem : Singleton<EnemySystem>
         ActionSystem.Instance.AddReaction(dealDamageGA);
         
         yield return null;
+    }
+
+    private IEnumerator KillEnemyPerformer(KillEnemyGA killEnemyGA)
+    {
+        activeEnemies.Remove(killEnemyGA.EnemyView);
+        Tween scaleTween = killEnemyGA.EnemyView.transform.DOScale(Vector3.zero, 0.25f);
+        yield return scaleTween.WaitForCompletion();
+        Destroy(killEnemyGA.EnemyView.gameObject);
     }
 }

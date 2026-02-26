@@ -25,9 +25,23 @@ public class DamageSystem : MonoBehaviour
                 if (damageVFXPrefab != null)
                 {
                     Instantiate(damageVFXPrefab, target.transform.position, Quaternion.identity);
+                    yield return new WaitForSeconds(0.15f);
+                    if(target.currentHealth <= 0)
+                    {
+                        if (target is EnemyView enemyView)
+                        {
+                        KillEnemyGA killEnemyGA = new(enemyView);
+                        ActionSystem.Instance.AddReaction(killEnemyGA);
+                        }
+                        else
+                        {
+                            //Do some game over logic here
+                            //Open Game Over Scene
+                        }
+                    }
                 }
             }
+        
         }
-        yield return new WaitForSeconds(0.15f);
-    }
+    }   
 }
