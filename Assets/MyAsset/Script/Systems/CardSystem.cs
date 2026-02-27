@@ -1,12 +1,12 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
-using BG_Games.Card_Game_Core.Player;
-using BG_Games.Card_Game_Core.Cards.Controllers;
 using DG.Tweening;
 public class CardSystem : Singleton<CardSystem>
 {
     [SerializeField] private HandView handView;
+    [SerializeField] private DrawPileUI drawPileUI;
+    [SerializeField] private DiscardPileUI discardPileUI;
 
     [SerializeField] private Transform drawPilePoint;
 
@@ -53,7 +53,10 @@ public class CardSystem : Singleton<CardSystem>
         foreach (var card in hand)
         {
             CardView cardView = handView.RemoveCard(card);
-            yield return DiscardCard(cardView);
+            if (cardView != null)
+            {
+                yield return DiscardCard(cardView);
+            }
         }
         hand.Clear();
     }
@@ -62,7 +65,12 @@ public class CardSystem : Singleton<CardSystem>
     {
         hand.Remove(playCardGA.Cards);
         CardView cardView = handView.RemoveCard(playCardGA.Cards);
-        yield return DiscardCard(cardView);
+        
+        // Only discard if cardView is not null
+        if (cardView != null)
+        {
+            yield return DiscardCard(cardView);
+        }
 
         SpendManaGA spendManaGA = new(playCardGA.Cards.Mana);
         ActionSystem.Instance.AddReaction(spendManaGA);
@@ -90,6 +98,7 @@ public class CardSystem : Singleton<CardSystem>
             Cards cards = new (cardData);
             drawPile.Add(cards);
         }
+        UpdatePileUI();
     }
 
     //helpers
@@ -97,22 +106,67 @@ public class CardSystem : Singleton<CardSystem>
     {
         Cards cards = drawPile.Draw();
         hand.Add(cards);
+        UpdatePileUI();
         CardView cardView = CardViewCreator.Instance.CreateCardView(cards, drawPilePoint.position, drawPilePoint.rotation);
-        yield return handView.AddCard(cardView);
+        
+        yield return handView.AddCard(cardView, (excessCards) =>
+        {
+            // Discard excess cards from the left
+            foreach (var excessCard in excessCards)
+            {
+                if (excessCard != null && excessCard.Cards != null)
+                {
+                    hand.Remove(excessCard.Cards);
+                    StartCoroutine(DiscardCard(excessCard));
+                }
+            }
+        });
     }
 
     private void RefillDeck()
     {
         drawPile.AddRange(discardPile);
         discardPile.Clear();
+        UpdatePileUI();
     }
 
     private IEnumerator DiscardCard(CardView cardView)
     {
-        discardPile.Add(cardView.Cards);
-        cardView.transform.DOScale(Vector3.zero, 0.15f);
-        Tween tween = cardView.transform.DOMove(discardPilePoint.position, 0.15f);
+        // Safety check: if cardView is null or already destroyed, skip
+        if (cardView == null || cardView.gameObject == null)
+        {
+            yield break;
+        }
+        
+        // Safety check: if Cards is null, skip adding to discard pile
+        if (cardView.Cards != null)
+        {
+            discardPile.Add(cardView.Cards);
+            UpdatePileUI();
+        }
+        
+        // Faster animation: 0.15f -> 0.08f -> 0.04f for quicker card execution
+        float animDuration = 0.04f;
+        cardView.transform.DOScale(Vector3.zero, animDuration);
+        Tween tween = cardView.transform.DOMove(discardPilePoint.position, animDuration);
         yield return tween.WaitForCompletion();
-        Destroy(cardView.gameObject);
+        
+        // Final safety check before destroying
+        if (cardView != null && cardView.gameObject != null)
+        {
+            Destroy(cardView.gameObject);
+        }
+    }
+
+    private void UpdatePileUI()
+    {
+        if (drawPileUI != null)
+        {
+            drawPileUI.UpdateDrawPileCount(drawPile.Count);
+        }
+        if (discardPileUI != null)
+        {
+            discardPileUI.UpdateDiscardPileCount(discardPile.Count);
+        }
     }
 }

@@ -13,9 +13,16 @@ MonoBehaviour:
   m_Name: Fireball
   m_EditorClassIdentifier: Assembly-CSharp::CardData
   <Description>k__BackingField: Deal 4 damage to an enemy
-  <Mana>k__BackingField: 2
+  <Mana>k__BackingField: 1
   <Image>k__BackingField: {fileID: 21300000, guid: 20a5a7bebb26bf74a9505bb6fd7d7cd2, type: 3}
-  <Effects>k__BackingField: []
+  <CastImage>k__BackingField: {fileID: 21300070, guid: 7ab74e659e1f0a34d9cfec21c478fc12, type: 3}
+  <ManualTargetEffect>k__BackingField:
+    rid: 2962222360477302876
+  <OtherEffects>k__BackingField: []
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 2962222360477302876
+      type: {class: DealDamageEffect, ns: , asm: Assembly-CSharp}
+      data:
+        damageAmount: 4

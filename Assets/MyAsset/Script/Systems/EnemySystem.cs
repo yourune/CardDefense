@@ -7,7 +7,6 @@ public class EnemySystem : Singleton<EnemySystem>
 {
     [SerializeField] private Transform spawnPoint;
     [SerializeField] private CastleView castle;
-    [SerializeField] private float moveSpeed = 2f;
     [SerializeField] private float spawnInterval = 2f;
 
     public List<EnemyView> activeEnemies = new List<EnemyView>();
@@ -80,7 +79,7 @@ public class EnemySystem : Singleton<EnemySystem>
             }
 
             // Move enemy left
-            enemy.transform.position += Vector3.left * moveSpeed * Time.deltaTime;
+            enemy.transform.position += Vector3.left * enemy.Speed * Time.deltaTime;
 
             // Check if enemy reached the castle
             if (enemy.transform.position.x <= castleXPosition)
@@ -100,7 +99,8 @@ public class EnemySystem : Singleton<EnemySystem>
             Debug.Log("Enemy reached castle!");
         }
         
-        enemy.transform.DOScale(Vector3.zero, 0.25f).OnComplete(() => Destroy(enemy.gameObject));
+        enemy.gameObject.SetActive(false);
+        Destroy(enemy.gameObject);
     }
 
     private IEnumerator AttackCastlePerformer(AttackCastleGA attackCastleGA)
@@ -116,8 +116,8 @@ public class EnemySystem : Singleton<EnemySystem>
     private IEnumerator KillEnemyPerformer(KillEnemyGA killEnemyGA)
     {
         activeEnemies.Remove(killEnemyGA.EnemyView);
-        Tween scaleTween = killEnemyGA.EnemyView.transform.DOScale(Vector3.zero, 0.25f);
-        yield return scaleTween.WaitForCompletion();
+        killEnemyGA.EnemyView.gameObject.SetActive(false);
         Destroy(killEnemyGA.EnemyView.gameObject);
+        yield return null;
     }
 }

@@ -23,10 +23,18 @@ public class CombatantView : MonoBehaviour
     {
         healthText.text = "HP: " + currentHealth.ToString();
     }
+    
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
         if (currentHealth < 0) currentHealth = 0;
+        UpdateHealthText();
+    }
+    
+    public void IncreaseMaxHealth(int amount)
+    {
+        MaxHealth += amount;
+        currentHealth += amount;
         UpdateHealthText();
     }
 }

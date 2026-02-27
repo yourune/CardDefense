@@ -6,6 +6,7 @@ public class Cards
     public string Title => data.name;
     public string Description => data.Description;
     public Sprite Image => data.Image;
+    public Sprite CastImage => data.CastImage;
     public Effect ManualTargetEffect => data.ManualTargetEffect;
     public List<AutoTargetEffect> OtherEffects => data.OtherEffects;
     public int Mana { get; private set; }

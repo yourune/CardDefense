@@ -30,8 +30,19 @@ public class DamageSystem : MonoBehaviour
                     {
                         if (target is EnemyView enemyView)
                         {
-                        KillEnemyGA killEnemyGA = new(enemyView);
-                        ActionSystem.Instance.AddReaction(killEnemyGA);
+                            // Drop rewards before killing enemy
+                            if (enemyView.EnemyData != null)
+                            {
+                                DropRewardGA dropRewardGA = new DropRewardGA(
+                                    enemyView.transform.position,
+                                    enemyView.EnemyData.GoldDrop,
+                                    enemyView.EnemyData.XpDrop
+                                );
+                                ActionSystem.Instance.AddReaction(dropRewardGA);
+                            }
+                            
+                            KillEnemyGA killEnemyGA = new(enemyView);
+                            ActionSystem.Instance.AddReaction(killEnemyGA);
                         }
                         else
                         {

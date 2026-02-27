@@ -6,7 +6,10 @@ using UnityEngine;
 public class ActionSystem : Singleton<ActionSystem>
 {
     private List<GameAction> reactions = null;
-    public bool IsPerforming { get; private set; } = false;
+    private Queue<(GameAction action, Action callback)> actionQueue = new Queue<(GameAction, Action)>();
+    private bool isProcessingQueue = false;
+    
+    public bool IsPerforming => isProcessingQueue || actionQueue.Count > 0;
 
     private static Dictionary<Type, List<Action<GameAction>>> preSubs = new();
     private static Dictionary<Type, List<Action<GameAction>>> postSubs = new();
@@ -14,13 +17,26 @@ public class ActionSystem : Singleton<ActionSystem>
 
     public void Perform(GameAction action, System.Action OnPerformFinished = null)
     {
-        if (IsPerforming) return;
-        IsPerforming = true;
-        StartCoroutine(Flow(action, () =>
+        actionQueue.Enqueue((action, OnPerformFinished));
+        
+        if (!isProcessingQueue)
         {
-            IsPerforming = false;
-            OnPerformFinished?.Invoke();
-        }));
+            StartCoroutine(ProcessQueue());
+        }
+    }
+    
+    private IEnumerator ProcessQueue()
+    {
+        isProcessingQueue = true;
+        
+        while (actionQueue.Count > 0)
+        {
+            var (action, callback) = actionQueue.Dequeue();
+            yield return Flow(action);
+            callback?.Invoke();
+        }
+        
+        isProcessingQueue = false;
     }
 
     public void AddReaction(GameAction gameAction)
@@ -28,7 +44,7 @@ public class ActionSystem : Singleton<ActionSystem>
         reactions?.Add(gameAction);
     }
 
-    private IEnumerator Flow(GameAction action, Action OnFlowFinished = null)
+    private IEnumerator Flow(GameAction action)
     {
         // PRE 단계
         reactions = action.PreReactions;
@@ -44,8 +60,6 @@ public class ActionSystem : Singleton<ActionSystem>
         reactions = action.PostReactions;
         PerformSubscribers(action, postSubs);
         yield return PerformReactions();
-
-        OnFlowFinished?.Invoke();
     }
 
     private IEnumerator PerformPerformer(GameAction action)

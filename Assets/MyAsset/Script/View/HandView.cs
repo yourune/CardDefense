@@ -11,13 +11,30 @@ using System.Linq;
 public class HandView : MonoBehaviour
 {
     [SerializeField] private SplineContainer splineContainer;
+    [SerializeField] private int maxHandSize = 10;
     
     private readonly List<CardView> cardss = new();
 
-    public IEnumerator AddCard(CardView cardView)
+    public IEnumerator AddCard(CardView cardView, System.Action<List<CardView>> onExcessCards = null)
     {
         cardss.Add(cardView);
+        
+        // Check if hand size exceeds max and remove excess cards from the left
+        List<CardView> excessCards = new List<CardView>();
+        while (cardss.Count > maxHandSize)
+        {
+            CardView excessCard = cardss[0];
+            cardss.RemoveAt(0);
+            excessCards.Add(excessCard);
+        }
+        
         yield return UpdateCardPositions(0.15f);
+        
+        // Notify about excess cards after positioning is done
+        if (excessCards.Count > 0)
+        {
+            onExcessCards?.Invoke(excessCards);
+        }
     }
 
     public CardView RemoveCard(Cards cards)
