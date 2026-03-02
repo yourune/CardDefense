@@ -327,6 +327,10 @@ MonoBehaviour:
   _dropLayer:
     serializedVersion: 2
     m_Bits: 256
+  _targetLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  allRenderers: []
 --- !u!210 &6206673126357332329
 SortingGroup:
   m_ObjectHideFlags: 0

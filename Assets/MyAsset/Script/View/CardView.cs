@@ -2,6 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Localization.SmartFormat.Utilities;
 using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 
 public class CardView : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class CardView : MonoBehaviour
     [SerializeField] private SpriteRenderer _imageSR;
     [SerializeField] private GameObject _wrapper;
     [SerializeField] private LayerMask _dropLayer;
+    [SerializeField] private LayerMask _targetLayer;
     [SerializeField] private SpriteRenderer[] allRenderers;
 
     public Cards Cards { get; private set; }
@@ -42,8 +44,16 @@ public class CardView : MonoBehaviour
     {
         if (Mouse.current == null) return;
         
+        // Don't process card input if mouse is over UI
+        if (IsPointerOverUIElement()) return;
+        
         CheckMouseHover();
         HandleMouseInput();
+    }
+    
+    private bool IsPointerOverUIElement()
+    {
+        return EventSystem.current != null && EventSystem.current.IsPointerOverGameObject();
     }
 
     private void CheckMouseHover()
@@ -113,6 +123,12 @@ public class CardView : MonoBehaviour
             CleanupCardState();
         }
     }
+    
+    private bool HasManualPositionTargeting()
+    {
+        return Cards.AreaEffects != null && Cards.AreaEffects.Count > 0
+            && Cards.AreaEffects.FindIndex(ae => ae.PositionTargetMode is ManualPositionTM) >= 0;
+    }
 
     private void OnMouseDownHandler()
     {
@@ -122,35 +138,16 @@ public class CardView : MonoBehaviour
         dragStartPosition = transform.position;
         dragStartRotation = transform.rotation;
         
-        if(Cards.ManualTargetEffect != null)
-        {
-            ManualTargetSystem.Instance.StartTargeting(Cards.Image, Cards.CastImage);
-            
-            // ManualTarget 카드도 투명하게 만들고 커서 변경
-            SetCardAlpha(0f);
-        }
-        else
-        {
-            Interactions.Instance.PlayerIsDragging = true;
-            _wrapper.SetActive(true);
-            CardViewHoverSystem.Instance.Hide();
-            transform.rotation = Quaternion.Euler(0, 0, 0);
-            transform.position = MouseUtil.GetMousePositionInWorldSpace(-1);
-            
-            // 일반 카드는 클릭 시 보이는 상태 유지 (DropArea 진입 시에만 투명해짐)
-        }
+        // All cards now use drag behavior initially
+        Interactions.Instance.PlayerIsDragging = true;
+        _wrapper.SetActive(true);
+        CardViewHoverSystem.Instance.Hide();
+        transform.rotation = Quaternion.Euler(0, 0, 0);
+        transform.position = MouseUtil.GetMousePositionInWorldSpace(-1);
     }
 
     private void OnMouseDragHandler()
     {
-        if(Cards.ManualTargetEffect != null)
-        {
-            // ManualTarget 카드는 타겟팅 업데이트
-            Vector3 mousePos = MouseUtil.GetMousePositionInWorldSpace(-1);
-            ManualTargetSystem.Instance.UpdateTargeting(mousePos);
-            return;
-        }
-        
         if (!Interactions.Instance.PlayerIsDragging) return;
         
         transform.position = MouseUtil.GetMousePositionInWorldSpace(-1);
@@ -194,51 +191,88 @@ public class CardView : MonoBehaviour
         
         isDragging = false;
         
-        if(Cards.ManualTargetEffect != null)
+        // Check if card is in drop area and has enough mana
+        bool inDropArea = Physics.Raycast(transform.position, Vector3.forward, out RaycastHit hit, 10f, _dropLayer);
+        
+        if (ManaSystem.Instance.HasEnoughMana(Cards.Mana) && inDropArea)
         {
-            EnemyView target = ManualTargetSystem.Instance.EndTargeting(MouseUtil.GetMousePositionInWorldSpace(-1));
-            if(target!=null && ManaSystem.Instance.HasEnoughMana(Cards.Mana))
-            {
-                PlayCardGA playCardGA = new(Cards, target);
-                ActionSystem.Instance.Perform(playCardGA);
-                
-                // 카드 사용 후 0.2초 쿨다운
-                Interactions.Instance.SetCardUsedCooldown();
-            }
-            else
-            {
-                // 타겟팅 실패 시 카드 복원
-                SetCardAlpha(1f);
-            }
+            bool cardPlayed = false;
             
-            // 커서 복원 및 상태 정리
-            ChangeCursorSystem.Instance.HideCursorImage();
-            Interactions.Instance.PlayerIsDragging = false;
-        }
-        else
-        {
-            if (ManaSystem.Instance.HasEnoughMana(Cards.Mana) 
-                && Physics.Raycast(transform.position, Vector3.forward, out RaycastHit hit, 10f, _dropLayer))
+            // Handle cards with manual target effect (need enemy target)
+            if (Cards.ManualTargetEffect != null)
+            {
+                Vector3 mousePos = MouseUtil.GetMousePositionInWorldSpace(-1);
+                if (Physics.Raycast(mousePos, Vector3.forward, out RaycastHit targetHit, 10f, _targetLayer)
+                    && targetHit.collider != null
+                    && targetHit.transform.TryGetComponent(out EnemyView enemyView))
+                {
+                    // Set enemy position for any EnemyPositionTM in AreaEffects
+                    if (Cards.AreaEffects != null)
+                    {
+                        foreach (var areaEffect in Cards.AreaEffects)
+                        {
+                            if (areaEffect?.PositionTargetMode is EnemyPositionTM enemyPosTM)
+                            {
+                                enemyPosTM.SetEnemyPosition(enemyView);
+                            }
+                        }
+                    }
+                    
+                    PlayCardGA playCardGA = new (Cards, enemyView);
+                    ActionSystem.Instance.Perform(playCardGA);
+                    cardPlayed = true;
+                }
+            }
+            // Handle cards with manual position targeting
+            else if (HasManualPositionTargeting())
+            {
+                Vector3 mousePos = MouseUtil.GetMousePositionInWorldSpace(-1);
+                // Set position in ManualPositionTM
+                foreach (var areaEffect in Cards.AreaEffects)
+                {
+                    if (areaEffect?.PositionTargetMode is ManualPositionTM manualPosTM)
+                    {
+                        manualPosTM.SetPosition(mousePos);
+                    }
+                }
+                
+                PlayCardGA playCardGA = new (Cards, null);
+                ActionSystem.Instance.Perform(playCardGA);
+                cardPlayed = true;
+            }
+            // Handle regular cards (no targeting needed)
+            else
             {
                 PlayCardGA playCardGA = new (Cards);
                 ActionSystem.Instance.Perform(playCardGA);
-                
+                cardPlayed = true;
+            }
+            
+            if (cardPlayed)
+            {
                 // 카드 사용 후 0.2초 쿨다운
                 Interactions.Instance.SetCardUsedCooldown();
             }
             else
             {
-                // 카드 사용 취소 - 원래 위치로 복귀
+                // 타겟팅 실패 - 카드 복원
                 transform.position = dragStartPosition;
                 transform.rotation = dragStartRotation;
                 SetCardAlpha(1f);
             }
-            
-            // 커서 복원 및 상태 정리
-            ChangeCursorSystem.Instance.HideCursorImage();
-            isOverDropArea = false;
-            Interactions.Instance.PlayerIsDragging = false;
         }
+        else
+        {
+            // 카드 사용 취소 - 원래 위치로 복귀
+            transform.position = dragStartPosition;
+            transform.rotation = dragStartRotation;
+            SetCardAlpha(1f);
+        }
+        
+        // 커서 복원 및 상태 정리
+        ChangeCursorSystem.Instance.HideCursorImage();
+        isOverDropArea = false;
+        Interactions.Instance.PlayerIsDragging = false;
     }
     
     private void CleanupCardState()
@@ -247,12 +281,6 @@ public class CardView : MonoBehaviour
         isOverDropArea = false;
         Interactions.Instance.PlayerIsDragging = false;
         ChangeCursorSystem.Instance.HideCursorImage();
-        
-        // ManualTarget 카드의 경우 ManualTargetSystem 정리
-        if (Cards != null && Cards.ManualTargetEffect != null)
-        {
-            ManualTargetSystem.Instance.ForceCleanup();
-        }
         
         // 카드 원래 위치로 복귀
         if (dragStartPosition != Vector3.zero)

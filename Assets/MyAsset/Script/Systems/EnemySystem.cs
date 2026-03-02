@@ -41,6 +41,36 @@ public class EnemySystem : Singleton<EnemySystem>
     {
         StartCoroutine(SpawnEnemiesCoroutine(enemyDataList));
     }
+    
+    /// <summary>
+    /// Spawn a single enemy with wave modifiers and position offset
+    /// </summary>
+    public void SpawnEnemyWithModifiers(EnemyData enemyData, Vector3 positionOffset, float healthMultiplier, float speedMultiplier)
+    {
+        if (EnemyViewCreator.Instance == null || spawnPoint == null)
+        {
+            Debug.LogError("EnemyViewCreator or SpawnPoint is not assigned!");
+            return;
+        }
+        
+        Vector3 spawnPosition = spawnPoint.position + positionOffset;
+        EnemyView enemy = EnemyViewCreator.Instance.CreateEnemyView(enemyData, spawnPosition, Quaternion.identity);
+        
+        if (enemy != null)
+        {
+            // Apply wave modifiers
+            enemy.ApplyModifiers(healthMultiplier, speedMultiplier);
+            activeEnemies.Add(enemy);
+        }
+    }
+    
+    /// <summary>
+    /// Get the number of active enemies
+    /// </summary>
+    public int GetActiveEnemyCount()
+    {
+        return activeEnemies.Count;
+    }
 
     private IEnumerator SpawnEnemiesCoroutine(List<EnemyData> enemyDataList)
     {
@@ -102,6 +132,22 @@ public class EnemySystem : Singleton<EnemySystem>
         enemy.gameObject.SetActive(false);
         Destroy(enemy.gameObject);
     }
+    
+    /// <summary>
+    /// Remove enemy directly without using ActionSystem (for zones)
+    /// </summary>
+    public void RemoveEnemyDirect(EnemyView enemy)
+    {
+        if (enemy == null) return;
+        
+        activeEnemies.Remove(enemy);
+        
+        if (enemy.gameObject != null)
+        {
+            enemy.gameObject.SetActive(false);
+            Destroy(enemy.gameObject);
+        }
+    }
 
     private IEnumerator AttackCastlePerformer(AttackCastleGA attackCastleGA)
     {
@@ -115,9 +161,19 @@ public class EnemySystem : Singleton<EnemySystem>
 
     private IEnumerator KillEnemyPerformer(KillEnemyGA killEnemyGA)
     {
+        if (killEnemyGA.EnemyView == null)
+        {
+            yield break;
+        }
+        
         activeEnemies.Remove(killEnemyGA.EnemyView);
-        killEnemyGA.EnemyView.gameObject.SetActive(false);
-        Destroy(killEnemyGA.EnemyView.gameObject);
+        
+        if (killEnemyGA.EnemyView != null && killEnemyGA.EnemyView.gameObject != null)
+        {
+            killEnemyGA.EnemyView.gameObject.SetActive(false);
+            Destroy(killEnemyGA.EnemyView.gameObject);
+        }
+        
         yield return null;
     }
 }

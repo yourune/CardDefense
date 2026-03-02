@@ -12,6 +12,9 @@ public class CardData : ScriptableObject
 
     [field: SerializeReference, SR] public Effect ManualTargetEffect { get; private set; }= null;
     [field: SerializeField] public List<AutoTargetEffect> OtherEffects { get; private set; }
-
+    
+    [Header("Area Effects")]
+    [field: SerializeField] public List<AutoAreaEffect> AreaEffects { get; private set; }
+    [field: SerializeField] public float AoeRadius { get; private set; } = 3f; // For manual position targeting
     
 }

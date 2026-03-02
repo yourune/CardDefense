@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02d105d2256c4c5489acdef64c150f3d, type: 3}
+  m_Name: ThunderBolt
+  m_EditorClassIdentifier: Assembly-CSharp::CardData
+  <Description>k__BackingField: Deals 50 Damage
+  <Mana>k__BackingField: 1
+  <Image>k__BackingField: {fileID: 21300098, guid: 7ab74e659e1f0a34d9cfec21c478fc12, type: 3}
+  <CastImage>k__BackingField: {fileID: 21300120, guid: 7ab74e659e1f0a34d9cfec21c478fc12, type: 3}
+  <ManualTargetEffect>k__BackingField:
+    rid: 2962222394791428205
+  <OtherEffects>k__BackingField: []
+  <AreaEffects>k__BackingField:
+  - <PositionTargetMode>k__BackingField:
+      rid: 2962222394791428196
+    <AreaEffect>k__BackingField:
+      rid: 2962222394791428198
+  <AoeRadius>k__BackingField: 3
+  references:
+    version: 2
+    RefIds:
+    - rid: 2962222394791428196
+      type: {class: ManualPositionTM, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 2962222394791428198
+      type: {class: GroundInteractionEffect, ns: , asm: Assembly-CSharp}
+      data:
+        requiredGroundState: 1
+        baseDamage: 50
+        bonusDamageOnGroundState: 3
+        effectRadius: 3
+        newGroundState: 3
+        newGroundStateDuration: 5
+        effectVFXPrefab: {fileID: 8771972552311404799, guid: bbf9e36a48d6c5648a13889afab076fd, type: 3}
+        bonusVFXPrefab: {fileID: 9027514048236820045, guid: effb650189dc5714e9e9801b1cfb3991, type: 3}
+        enemyLayer:
+          serializedVersion: 2
+          m_Bits: 512
+    - rid: 2962222394791428205
+      type: {class: DealDamageEffect, ns: , asm: Assembly-CSharp}
+      data:
+        damageAmount: 50

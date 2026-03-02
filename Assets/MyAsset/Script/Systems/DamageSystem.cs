@@ -26,7 +26,9 @@ public class DamageSystem : MonoBehaviour
                 {
                     Instantiate(damageVFXPrefab, target.transform.position, Quaternion.identity);
                     yield return new WaitForSeconds(0.15f);
-                    if(target.currentHealth <= 0)
+                    
+                    // Check if target is still valid after wait
+                    if(target != null && target.currentHealth <= 0)
                     {
                         if (target is EnemyView enemyView)
                         {

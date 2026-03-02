@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02d105d2256c4c5489acdef64c150f3d, type: 3}
+  m_Name: PoisonCloud
+  m_EditorClassIdentifier: Assembly-CSharp::CardData
+  <Description>k__BackingField: Make the enemy poisoned
+  <Mana>k__BackingField: 1
+  <Image>k__BackingField: {fileID: 21300090, guid: 7ab74e659e1f0a34d9cfec21c478fc12, type: 3}
+  <CastImage>k__BackingField: {fileID: 21300000, guid: c51a5439ed200294c9fe5c79d33d32aa, type: 3}
+  <ManualTargetEffect>k__BackingField:
+    rid: -2
+  <OtherEffects>k__BackingField: []
+  <AreaEffects>k__BackingField:
+  - <PositionTargetMode>k__BackingField:
+      rid: 2962222394791428193
+    <AreaEffect>k__BackingField:
+      rid: 2962222394791428195
+  <AoeRadius>k__BackingField: 5
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 2962222394791428193
+      type: {class: ManualPositionTM, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 2962222394791428195
+      type: {class: SpawnZoneEffect, ns: , asm: Assembly-CSharp}
+      data:
+        zonePrefab: {fileID: 2425540639344788462, guid: 95ec6ba68cc6fd14587d01ae6c72902a, type: 3}
+        duration: 20
+        radius: 5

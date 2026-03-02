@@ -40,6 +40,58 @@ public class RewardVisualSystem : Singleton<RewardVisualSystem>
         StartCoroutine(DisplayAccumulatedRewards());
     }
     
+    /// <summary>
+    /// Spawn rewards directly without using ActionSystem (for zones)
+    /// </summary>
+    public void SpawnRewardsDirect(Vector3 dropPosition, int goldAmount, int xpAmount)
+    {
+        StartCoroutine(SpawnRewardsDirectCoroutine(dropPosition, goldAmount, xpAmount));
+    }
+    
+    private IEnumerator SpawnRewardsDirectCoroutine(Vector3 dropPosition, int goldAmount, int xpAmount)
+    {
+        Vector3 castlePosition = GetCastlePosition();
+        
+        // Drop gold coins to castle
+        if (goldAmount > 0 && goldCoinPrefab != null)
+        {
+            int coinsToSpawn = Mathf.Min(goldAmount / 10 + 1, 5);
+            for (int i = 0; i < coinsToSpawn; i++)
+            {
+                SpawnAndAnimateReward(goldCoinPrefab, dropPosition, castlePosition);
+                yield return new WaitForSeconds(dropDelay);
+            }
+        }
+        
+        // Drop XP orbs to castle
+        if (xpAmount > 0 && xpOrbPrefab != null)
+        {
+            int orbsToSpawn = Mathf.Min(xpAmount / 5 + 1, 5);
+            for (int i = 0; i < orbsToSpawn; i++)
+            {
+                SpawnAndAnimateReward(xpOrbPrefab, dropPosition, castlePosition);
+                yield return new WaitForSeconds(dropDelay);
+            }
+        }
+        
+        // Wait for collection animation, then directly add rewards
+        yield return new WaitForSeconds(collectDuration * 1.5f);
+        
+        accumulatedGold += goldAmount;
+        accumulatedXp += xpAmount;
+        
+        // Gain resources directly without ActionSystem
+        if (goldAmount > 0 && RewardSystem.Instance != null)
+        {
+            RewardSystem.Instance.AddGoldDirect(goldAmount);
+        }
+        
+        if (xpAmount > 0 && RewardSystem.Instance != null)
+        {
+            RewardSystem.Instance.AddXpDirect(xpAmount);
+        }
+    }
+    
     private IEnumerator DropRewardPerformer(DropRewardGA dropRewardGA)
     {
         Vector3 dropPosition = dropRewardGA.DropPosition;

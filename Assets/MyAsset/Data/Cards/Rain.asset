@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02d105d2256c4c5489acdef64c150f3d, type: 3}
+  m_Name: Rain
+  m_EditorClassIdentifier: Assembly-CSharp::CardData
+  <Description>k__BackingField: Ground gets wet. Deal 1 damage
+  <Mana>k__BackingField: 1
+  <Image>k__BackingField: {fileID: 21300094, guid: 7ab74e659e1f0a34d9cfec21c478fc12, type: 3}
+  <CastImage>k__BackingField: {fileID: 21300000, guid: f986d295fd43f3f4db58c4c6b59d493d, type: 3}
+  <ManualTargetEffect>k__BackingField:
+    rid: -2
+  <OtherEffects>k__BackingField: []
+  <AreaEffects>k__BackingField:
+  - <PositionTargetMode>k__BackingField:
+      rid: 2962222394791428201
+    <AreaEffect>k__BackingField:
+      rid: 2962222394791428202
+  <AoeRadius>k__BackingField: 5
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 2962222394791428201
+      type: {class: ManualPositionTM, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 2962222394791428202
+      type: {class: SpawnZoneEffect, ns: , asm: Assembly-CSharp}
+      data:
+        zonePrefab: {fileID: 7543300268188306581, guid: 34f176c537897f149ab2663f04c97acf, type: 3}
+        duration: 10
+        radius: 10

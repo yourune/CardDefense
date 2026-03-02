@@ -9,6 +9,8 @@ public class Cards
     public Sprite CastImage => data.CastImage;
     public Effect ManualTargetEffect => data.ManualTargetEffect;
     public List<AutoTargetEffect> OtherEffects => data.OtherEffects;
+    public List<AutoAreaEffect> AreaEffects => data.AreaEffects;
+    public float AoeRadius => data.AoeRadius;
     public int Mana { get; private set; }
 
     private readonly CardData data;

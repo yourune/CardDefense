@@ -104,4 +104,40 @@ public class RewardSystem : Singleton<RewardSystem>
         }
         return false;
     }
+    
+    /// <summary>
+    /// Add gold directly without using ActionSystem (for zones and direct rewards)
+    /// </summary>
+    public void AddGoldDirect(int amount)
+    {
+        CurrentGold += amount;
+        OnGoldChanged?.Invoke(CurrentGold);
+    }
+    
+    /// <summary>
+    /// Add XP directly without using ActionSystem (for zones and direct rewards)
+    /// </summary>
+    public void AddXpDirect(int amount)
+    {
+        CurrentXp += amount;
+        
+        // Check for level up
+        while (CurrentXp >= XpRequiredForNextLevel)
+        {
+            CurrentXp -= XpRequiredForNextLevel;
+            CurrentLevel++;
+            CalculateXpRequired();
+            
+            // Increase castle health
+            if (CastleSystem.Instance != null && CastleSystem.Instance.CastleView != null)
+            {
+                CastleSystem.Instance.CastleView.IncreaseMaxHealth(healthPerLevel);
+            }
+            
+            OnLevelUp?.Invoke(CurrentLevel);
+            Debug.Log($"Level Up! New Level: {CurrentLevel}, Next Level Requires: {XpRequiredForNextLevel} XP");
+        }
+        
+        OnXpChanged?.Invoke(CurrentXp, XpRequiredForNextLevel, CurrentLevel);
+    }
 }

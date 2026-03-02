@@ -80,12 +80,53 @@ public class CardSystem : Singleton<CardSystem>
             PerformEffectGA performEffectGa = new(playCardGA.Cards.ManualTargetEffect, new (){ playCardGA.ManualTarget });
             ActionSystem.Instance.AddReaction(performEffectGa);
         }
+        
         //Perform effects
-        foreach (var effectWrapper in playCardGA.Cards.OtherEffects)
+        if (playCardGA.Cards.OtherEffects != null)
         {
-            List<CombatantView> targets = effectWrapper.TargetMode.GetTargets();
-            PerformEffectGA performEffectGa = new(effectWrapper.Effect, targets);
-            ActionSystem.Instance.AddReaction(performEffectGa);
+            foreach (var effectWrapper in playCardGA.Cards.OtherEffects)
+            {
+                if (effectWrapper == null || effectWrapper.TargetMode == null || effectWrapper.Effect == null)
+                {
+                    Debug.LogWarning($"CardSystem: OtherEffect on card '{playCardGA.Cards.Title}' has null components, skipping");
+                    continue;
+                }
+                
+                List<CombatantView> targets = effectWrapper.TargetMode.GetTargets();
+                PerformEffectGA performEffectGa = new(effectWrapper.Effect, targets);
+                ActionSystem.Instance.AddReaction(performEffectGa);
+            }
+        }
+        
+        //Perform area effects
+        if (playCardGA.Cards.AreaEffects != null)
+        {
+            foreach (var areaEffectWrapper in playCardGA.Cards.AreaEffects)
+            {
+                if (areaEffectWrapper == null || areaEffectWrapper.PositionTargetMode == null || areaEffectWrapper.AreaEffect == null)
+                {
+                    Debug.LogWarning($"CardSystem: AreaEffect on card '{playCardGA.Cards.Title}' has null components, skipping");
+                    continue;
+                }
+                
+                Vector3[] positions = areaEffectWrapper.PositionTargetMode.GetPositions();
+                
+                if (positions == null || positions.Length == 0)
+                {
+                    Debug.LogWarning($"CardSystem: PositionTargetMode on card '{playCardGA.Cards.Title}' returned no positions");
+                    continue;
+                }
+                
+                GameAction[] areaActions = areaEffectWrapper.AreaEffect.GetGameActions(positions);
+                
+                if (areaActions != null)
+                {
+                    foreach (var action in areaActions)
+                    {
+                        ActionSystem.Instance.AddReaction(action);
+                    }
+                }
+            }
         }
     }
 

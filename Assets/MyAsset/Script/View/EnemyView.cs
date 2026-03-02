@@ -19,6 +19,24 @@ public class EnemyView : CombatantView
         }
     }
     
+    /// <summary>
+    /// Apply wave modifiers to this enemy
+    /// </summary>
+    public void ApplyModifiers(float healthMultiplier, float speedMultiplier)
+    {
+        if (healthMultiplier != 1f)
+        {
+            int modifiedMaxHealth = Mathf.RoundToInt(MaxHealth * healthMultiplier);
+            int healthDifference = modifiedMaxHealth - MaxHealth;
+            IncreaseMaxHealth(healthDifference);
+        }
+        
+        if (speedMultiplier != 1f)
+        {
+            Speed *= speedMultiplier;
+        }
+    }
+    
     public void ShowTargetIndicator(bool show)
     {
         if (targetIndicator != null)

@@ -19,6 +19,12 @@ MonoBehaviour:
   <ManualTargetEffect>k__BackingField:
     rid: 2962222360477302876
   <OtherEffects>k__BackingField: []
+  <AreaEffects>k__BackingField:
+  - <PositionTargetMode>k__BackingField:
+      rid: 2962222394791428203
+    <AreaEffect>k__BackingField:
+      rid: 2962222394791428199
+  <AoeRadius>k__BackingField: 3
   references:
     version: 2
     RefIds:
@@ -26,3 +32,15 @@ MonoBehaviour:
       type: {class: DealDamageEffect, ns: , asm: Assembly-CSharp}
       data:
         damageAmount: 4
+    - rid: 2962222394791428199
+      type: {class: InstantAreaDamageEffect, ns: , asm: Assembly-CSharp}
+      data:
+        damageAmount: 10
+        effectRadius: 3
+        explosionVFXPrefab: {fileID: 8194992990867289339, guid: 99bc28c0d45f51c4fbac01080b73edc7, type: 3}
+        enemyLayer:
+          serializedVersion: 2
+          m_Bits: 512
+    - rid: 2962222394791428203
+      type: {class: EnemyPositionTM, ns: , asm: Assembly-CSharp}
+      data: 
