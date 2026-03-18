@@ -9,7 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5200083468148719979}
-  - component: {fileID: 6926855944785860605}
+  - component: {fileID: 7589691260821596069}
+  - component: {fileID: 6337344518300331235}
+  - component: {fileID: 8750315207532333957}
   m_Layer: 0
   m_Name: Rainzone
   m_TagString: Untagged
@@ -32,7 +34,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6926855944785860605
+--- !u!114 &7589691260821596069
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,14 +43,62 @@ MonoBehaviour:
   m_GameObject: {fileID: 7543300268188306581}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f57ad27620e41d4e92cd891f035f175, type: 3}
+  m_Script: {fileID: 11500000, guid: aaf2cfac1e21d5b4e9d6ad09b425d9bf, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SquareRainZone
-  duration: 10
-  radius: 10
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  rainVFX: {fileID: 0}
+  m_EditorClassIdentifier: Assembly-CSharp::RainZone
+  duration: 5
   width: 5
   height: 5
+  zoneVFXPrefab: {fileID: 0}
+  zoneGroundImage: {fileID: 0}
+  damagePerTick: 0
+  damageTickInterval: 1
+  slowPercentage: 30
+--- !u!65 &6337344518300331235
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7543300268188306581}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 5, y: 10, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &8750315207532333957
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7543300268188306581}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

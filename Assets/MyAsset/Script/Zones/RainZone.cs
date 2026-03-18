@@ -1,64 +1,37 @@
 using UnityEngine;
 
 /// <summary>
-/// Rain effect that creates wet ground state for interactions
+/// Rain zone that creates wet ground.
+/// Special Effects: 
+/// 1. Creates water puddles on the ground
+/// 2. Enemies that step on wet ground are slowed
 /// </summary>
 public class RainZone : EffectZone
 {
-    [SerializeField] private GameObject rainVFX;
-    [SerializeField] private float groundStateRadius = 2f;
+    // Damage settings configured in Inspector through base class:
+    // - damagePerTick = 0 (no damage)
+    // - damageTickInterval = N/A
     
-    protected override void OnZoneCreated()
-    {
-        if (rainVFX != null)
-        {
-            Instantiate(rainVFX, transform.position, Quaternion.identity, transform);
-        }
-        
-        // Create initial wet ground state
-        CreateWetGround();
-    }
+    // Special Effect: Wet ground and slow (Not implemented yet)
+    [Header("Rain Special Effects")]
+    [SerializeField] private float slowPercentage = 30f; // 30% slow
     
     protected override void UpdateZone()
     {
-        // Continuously refresh wet ground state
-        CreateWetGround();
-    }
-    
-    private void CreateWetGround()
-    {
-        // Create wet spots in a grid pattern around the zone
-        for (float x = -radius; x <= radius; x += 1f)
-        {
-            for (float z = -radius; z <= radius; z += 1f)
-            {
-                Vector3 groundPos = transform.position + new Vector3(x, 0, z);
-                if (Vector3.Distance(groundPos, transform.position) <= radius)
-                {
-                    ZoneManager.Instance.SetGroundState(groundPos, GroundStateType.Wet, duration);
-                }
-            }
-        }
+        // TODO: Implement wet ground creation
+        // Create water puddles in grid pattern
+        // ZoneManager.Instance.SetGroundState(pos, GroundStateType.Wet, duration)
     }
     
     protected override void OnEnemyEnter(EnemyView enemy)
     {
-        // Enemies become wet (could add wet debuff)
-    }
-    
-    protected override void OnEnemyStay(EnemyView enemy)
-    {
-        // Keep enemies wet
+        // TODO: Apply slow debuff
+        // Reduce enemy.Speed by slowPercentage
     }
     
     protected override void OnEnemyExit(EnemyView enemy)
     {
-        // Enemies stay wet for a while after leaving
-    }
-    
-    protected override void OnZoneExpired()
-    {
-        // Wet ground persists after rain stops
-        Debug.Log("Rain stopped, but ground remains wet");
+        // TODO: Remove slow debuff
+        // Restore enemy.Speed
     }
 }

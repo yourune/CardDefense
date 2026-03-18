@@ -20,7 +20,6 @@ public class CastleDamageTestSystem : MonoBehaviour
     private void DamageCastle()
     {
         castle.TakeDamage(damagePerSecond);
-        Debug.Log($"Castle took {damagePerSecond} damage! Current HP: {castle.currentHealth}");
     }
 
     private void OnDisable()

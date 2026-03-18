@@ -4,7 +4,7 @@ public class EnemyView : CombatantView
 {
     [SerializeField] private SpriteRenderer targetIndicator;
     
-    public float Speed { get; private set; }
+    public float Speed { get; set; }
     public EnemyData EnemyData { get; private set; }
 
     public void Setup(EnemyData enemyData)

@@ -1,7 +1,7 @@
 # Reward System Setup Guide
 
 ## Overview
-The reward system allows enemies to drop gold and XP when they die, with visual feedback and a level-up system for the castle.
+The reward system allows enemies to drop gold and XP when they die, with visual feedback and a level-up system for the castle. **The system now uses object pooling for optimal performance**, reducing instantiation overhead and memory allocation.
 
 ## Components Created
 
@@ -13,15 +13,18 @@ The reward system allows enemies to drop gold and XP when they die, with visual 
 
 ### 2. Systems
 - **RewardSystem**: Manages gold, XP, and leveling progression
-- **RewardVisualSystem**: Handles visual feedback for reward drops
+- **RewardVisualSystem**: Handles visual feedback for reward drops (with object pooling)
 
-### 3. UI Components
+### 3. Utility
+- **SimpleObjectPool\<T\>**: Generic object pooling system for efficient object reuse
+
+### 4. UI Components
 - **RewardUI**: Displays gold, XP bar, and level information
 
-### 4. Visual Components
+### 5. Visual Components
 - **FloatingRewardText**: Shows floating "+Gold +XP" text at enemy death location
-- **GoldCoin**: Visual gold coin that animates to UI
-- **XpOrb**: Visual XP orb that animates to UI
+- **GoldCoin**: Visual gold coin that animates to UI (pooled)
+- **XpOrb**: Visual XP orb that animates to UI (pooled)
 
 ## Setup Instructions
 
@@ -41,7 +44,15 @@ The reward system allows enemies to drop gold and XP when they die, with visual 
      - Health Per Level: 10 (castle gains 10 HP per level)
 
 3. Create an empty GameObject named "RewardVisualSystem"
-4. Add the **RewardVisualSystem** component (see Step 3 for prefab setup)
+4. Add the **RewardVisualSystem** component
+   - **Spawn Settings** (NEW):
+     - Gold Per Coin: 20 (spawn 1 coin per 20 gold)
+     - XP Per Orb: 10 (spawn 1 orb per 10 XP)
+     - Max Coins Per Drop: 3 (maximum visual coins)
+     - Max Orbs Per Drop: 3 (maximum visual orbs)
+   - **Object Pool Settings** (NEW):
+     - Initial Pool Size: 20 (pre-instantiate 20 of each type)
+   - See Step 3 for prefab setup
 
 ### Step 3: Create Visual Prefabs
 
@@ -165,6 +176,28 @@ If XP >= required:
 - Each level: Castle gains +10 HP (configurable)
 
 ## Customization Options
+
+### Spawn Behavior (NEW)
+In **RewardVisualSystem**:
+- `goldPerCoin`: How much gold each visual coin represents (default: 20)
+  - Lower = more coins spawn (more visual clutter, worse performance)
+  - Higher = fewer coins spawn (cleaner, better performance)
+- `xpPerOrb`: How much XP each visual orb represents (default: 10)
+- `maxCoinsPerDrop`: Maximum number of coins that can spawn at once (default: 3)
+- `maxOrbsPerDrop`: Maximum number of orbs that can spawn at once (default: 3)
+
+**Spawn Formula:**
+```
+coins = Clamp((goldAmount / goldPerCoin) + 1, 1, maxCoinsPerDrop)
+orbs = Clamp((xpAmount / xpPerOrb) + 1, 1, maxOrbsPerDrop)
+```
+This ensures at least 1 visual object always spawns, regardless of amount.
+
+### Object Pooling (NEW)
+In **RewardVisualSystem**:
+- `initialPoolSize`: Number of coins and orbs pre-instantiated at start (default: 20)
+  - Set higher if you have many enemies dying simultaneously
+  - Pool automatically expands if needed, but pre-allocation improves performance
 
 ### Visual Feedback
 In **RewardVisualSystem**:

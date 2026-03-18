@@ -25,16 +25,21 @@ public class ZoneManager : Singleton<ZoneManager>
     }
     
     /// <summary>
-    /// Get all zones at a position within a radius
+    /// Get all zones at a position
     /// </summary>
-    public List<EffectZone> GetZonesAtPosition(Vector3 position, float radius = 0.5f)
+    public List<EffectZone> GetZonesAtPosition(Vector3 position, float margin = 0.5f)
     {
         List<EffectZone> zones = new List<EffectZone>();
         
         foreach (var zone in activeZones)
         {
-            float distance = Vector3.Distance(position, zone.transform.position);
-            if (distance <= zone.Radius + radius)
+            // Check if position is within zone's rectangular bounds (with margin)
+            Vector3 zonePos = zone.transform.position;
+            float halfWidth = zone.Width / 2f + margin;
+            float halfHeight = zone.Height / 2f + margin;
+            
+            if (Mathf.Abs(position.x - zonePos.x) <= halfWidth &&
+                Mathf.Abs(position.z - zonePos.z) <= halfHeight)
             {
                 zones.Add(zone);
             }

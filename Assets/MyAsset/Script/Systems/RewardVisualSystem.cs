@@ -16,6 +16,15 @@ public class RewardVisualSystem : Singleton<RewardVisualSystem>
     [SerializeField] private float collectDuration = 0.5f;
     [SerializeField] private Ease collectEase = Ease.InBack;
     
+    [Header("Spawn Settings")]
+    [SerializeField] private int goldPerCoin = 20; // Spawn 1 coin per 20 gold
+    [SerializeField] private int xpPerOrb = 10; // Spawn 1 orb per 10 XP
+    [SerializeField] private int maxCoinsPerDrop = 3; // Maximum visual coins
+    [SerializeField] private int maxOrbsPerDrop = 3; // Maximum visual orbs
+    
+    [Header("Object Pool Settings")]
+    [SerializeField] private int initialPoolSize = 20; // Pre-instantiate objects
+    
     [Header("Accumulation Settings")]
     [SerializeField] private float displayInterval = 5f; // Show accumulated rewards every 5 seconds
     
@@ -23,20 +32,47 @@ public class RewardVisualSystem : Singleton<RewardVisualSystem>
     private int accumulatedGold = 0;
     private int accumulatedXp = 0;
     
+    // Object pools
+    private SimpleObjectPool<GoldCoin> goldCoinPool;
+    private SimpleObjectPool<XpOrb> xpOrbPool;
+    private Transform poolParent;
+    
     void OnEnable()
     {
         ActionSystem.AttachPerformer<DropRewardGA>(DropRewardPerformer);
+        ActionSystem.AttachPerformer<DropMultipleRewardsGA>(DropMultipleRewardsPerformer);
     }
     
     void OnDisable()
     {
         ActionSystem.DetachPerformer<DropRewardGA>();
+        ActionSystem.DetachPerformer<DropMultipleRewardsGA>();
         StopAllCoroutines();
+        
+        // Return all objects to pool
+        goldCoinPool?.ReturnAll();
+        xpOrbPool?.ReturnAll();
     }
     
     private void Start()
     {
         mainCamera = Camera.main;
+        
+        // Create pool parent
+        poolParent = new GameObject("RewardObjectPools").transform;
+        poolParent.SetParent(transform);
+        
+        // Initialize object pools
+        if (goldCoinPrefab != null)
+        {
+            goldCoinPool = new SimpleObjectPool<GoldCoin>(goldCoinPrefab, poolParent, initialPoolSize);
+        }
+        
+        if (xpOrbPrefab != null)
+        {
+            xpOrbPool = new SimpleObjectPool<XpOrb>(xpOrbPrefab, poolParent, initialPoolSize);
+        }
+        
         StartCoroutine(DisplayAccumulatedRewards());
     }
     
@@ -53,23 +89,25 @@ public class RewardVisualSystem : Singleton<RewardVisualSystem>
         Vector3 castlePosition = GetCastlePosition();
         
         // Drop gold coins to castle
-        if (goldAmount > 0 && goldCoinPrefab != null)
+        if (goldAmount > 0 && goldCoinPool != null)
         {
-            int coinsToSpawn = Mathf.Min(goldAmount / 10 + 1, 5);
+            // Reduced spawn count: 1 coin per 20 gold, minimum 1, maximum 3
+            int coinsToSpawn = Mathf.Clamp((goldAmount / goldPerCoin) + 1, 1, maxCoinsPerDrop);
             for (int i = 0; i < coinsToSpawn; i++)
             {
-                SpawnAndAnimateReward(goldCoinPrefab, dropPosition, castlePosition);
+                SpawnAndAnimateReward(goldCoinPool, dropPosition, castlePosition);
                 yield return new WaitForSeconds(dropDelay);
             }
         }
         
         // Drop XP orbs to castle
-        if (xpAmount > 0 && xpOrbPrefab != null)
+        if (xpAmount > 0 && xpOrbPool != null)
         {
-            int orbsToSpawn = Mathf.Min(xpAmount / 5 + 1, 5);
+            // Reduced spawn count: 1 orb per 10 XP, minimum 1, maximum 3
+            int orbsToSpawn = Mathf.Clamp((xpAmount / xpPerOrb) + 1, 1, maxOrbsPerDrop);
             for (int i = 0; i < orbsToSpawn; i++)
             {
-                SpawnAndAnimateReward(xpOrbPrefab, dropPosition, castlePosition);
+                SpawnAndAnimateReward(xpOrbPool, dropPosition, castlePosition);
                 yield return new WaitForSeconds(dropDelay);
             }
         }
@@ -98,23 +136,25 @@ public class RewardVisualSystem : Singleton<RewardVisualSystem>
         Vector3 castlePosition = GetCastlePosition();
         
         // Drop gold coins to castle
-        if (dropRewardGA.GoldAmount > 0 && goldCoinPrefab != null)
+        if (dropRewardGA.GoldAmount > 0 && goldCoinPool != null)
         {
-            int coinsToSpawn = Mathf.Min(dropRewardGA.GoldAmount / 10 + 1, 5); // Max 5 visual coins
+            // Reduced spawn count: 1 coin per 20 gold, minimum 1, maximum 3
+            int coinsToSpawn = Mathf.Clamp((dropRewardGA.GoldAmount / goldPerCoin) + 1, 1, maxCoinsPerDrop);
             for (int i = 0; i < coinsToSpawn; i++)
             {
-                SpawnAndAnimateReward(goldCoinPrefab, dropPosition, castlePosition);
+                SpawnAndAnimateReward(goldCoinPool, dropPosition, castlePosition);
                 yield return new WaitForSeconds(dropDelay);
             }
         }
         
         // Drop XP orbs to castle
-        if (dropRewardGA.XpAmount > 0 && xpOrbPrefab != null)
+        if (dropRewardGA.XpAmount > 0 && xpOrbPool != null)
         {
-            int orbsToSpawn = Mathf.Min(dropRewardGA.XpAmount / 5 + 1, 5); // Max 5 visual orbs
+            // Reduced spawn count: 1 orb per 10 XP, minimum 1, maximum 3
+            int orbsToSpawn = Mathf.Clamp((dropRewardGA.XpAmount / xpPerOrb) + 1, 1, maxOrbsPerDrop);
             for (int i = 0; i < orbsToSpawn; i++)
             {
-                SpawnAndAnimateReward(xpOrbPrefab, dropPosition, castlePosition);
+                SpawnAndAnimateReward(xpOrbPool, dropPosition, castlePosition);
                 yield return new WaitForSeconds(dropDelay);
             }
         }
@@ -139,9 +179,96 @@ public class RewardVisualSystem : Singleton<RewardVisualSystem>
         }
     }
     
-    private void SpawnAndAnimateReward(GameObject prefab, Vector3 startPos, Vector3 targetPos)
+    /// <summary>
+    /// Drop multiple rewards simultaneously (all spawn at once)
+    /// </summary>
+    private IEnumerator DropMultipleRewardsPerformer(DropMultipleRewardsGA dropMultipleRewardsGA)
     {
-        GameObject reward = Instantiate(prefab, startPos, Quaternion.identity);
+        if (dropMultipleRewardsGA.Rewards == null || dropMultipleRewardsGA.Rewards.Count == 0)
+        {
+            yield break;
+        }
+        
+        Vector3 castlePosition = GetCastlePosition();
+        int totalGold = 0;
+        int totalXp = 0;
+        
+        // Spawn all rewards simultaneously
+        foreach (var (position, gold, xp) in dropMultipleRewardsGA.Rewards)
+        {
+            totalGold += gold;
+            totalXp += xp;
+            
+            // Start spawning coins/orbs for this reward (don't wait)
+            StartCoroutine(SpawnRewardVisuals(position, castlePosition, gold, xp));
+        }
+        
+        // Wait for all animations to complete
+        yield return new WaitForSeconds(collectDuration * 1.5f + dropDelay * maxCoinsPerDrop);
+        
+        // Accumulate all rewards
+        accumulatedGold += totalGold;
+        accumulatedXp += totalXp;
+        
+        // Gain resources
+        if (totalGold > 0)
+        {
+            GainGoldGA gainGoldGA = new GainGoldGA(totalGold);
+            ActionSystem.Instance.AddReaction(gainGoldGA);
+        }
+        
+        if (totalXp > 0)
+        {
+            GainXpGA gainXpGA = new GainXpGA(totalXp);
+            ActionSystem.Instance.AddReaction(gainXpGA);
+        }
+    }
+    
+    /// <summary>
+    /// Helper method to spawn reward visuals for a single location
+    /// </summary>
+    private IEnumerator SpawnRewardVisuals(Vector3 dropPosition, Vector3 castlePosition, int goldAmount, int xpAmount)
+    {
+        // Drop gold coins
+        if (goldAmount > 0 && goldCoinPool != null)
+        {
+            int coinsToSpawn = Mathf.Clamp((goldAmount / goldPerCoin) + 1, 1, maxCoinsPerDrop);
+            for (int i = 0; i < coinsToSpawn; i++)
+            {
+                SpawnAndAnimateReward(goldCoinPool, dropPosition, castlePosition);
+                yield return new WaitForSeconds(dropDelay);
+            }
+        }
+        
+        // Drop XP orbs
+        if (xpAmount > 0 && xpOrbPool != null)
+        {
+            int orbsToSpawn = Mathf.Clamp((xpAmount / xpPerOrb) + 1, 1, maxOrbsPerDrop);
+            for (int i = 0; i < orbsToSpawn; i++)
+            {
+                SpawnAndAnimateReward(xpOrbPool, dropPosition, castlePosition);
+                yield return new WaitForSeconds(dropDelay);
+            }
+        }
+    }
+    
+    private void SpawnAndAnimateReward<T>(SimpleObjectPool<T> pool, Vector3 startPos, Vector3 targetPos) where T : Component
+    {
+        T reward = pool.Get();
+        reward.transform.position = startPos;
+        reward.transform.localScale = Vector3.one;
+        
+        // Setup return callback
+        if (reward is GoldCoin goldCoin)
+        {
+            goldCoin.ResetCoin();
+            goldCoin.SetReturnCallback((coin) => goldCoinPool.Return(coin));
+        }
+        else if (reward is XpOrb xpOrb)
+        {
+            xpOrb.ResetOrb();
+            xpOrb.SetReturnCallback((orb) => xpOrbPool.Return(orb));
+        }
         
         // Random offset for drop
         Vector3 randomOffset = new Vector3(
@@ -164,8 +291,14 @@ public class RewardVisualSystem : Singleton<RewardVisualSystem>
         sequence.Append(reward.transform.DOMove(targetPos, collectDuration).SetEase(collectEase));
         sequence.Join(reward.transform.DOScale(0.3f, collectDuration));
         
-        // Destroy after animation
-        sequence.OnComplete(() => Destroy(reward));
+        // Return to pool after animation
+        sequence.OnComplete(() => 
+        {
+            if (reward is GoldCoin gc)
+                gc.ReturnToPool();
+            else if (reward is XpOrb xo)
+                xo.ReturnToPool();
+        });
     }
     
     private void ShowFloatingText(Vector3 position, int gold, int xp)

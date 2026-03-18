@@ -96,6 +96,13 @@ namespace SerializeReferenceEditor.Editor.ClassReplacer
 				if (string.IsNullOrEmpty(assetPath)) 
 					return;
 
+				// Don't process read-only package assets
+				if (assetPath.Contains("PackageCache") || assetPath.StartsWith("Packages/"))
+				{
+					_processingObjects.Remove(instanceId);
+					return;
+				}
+
 				if (PrefabUtility.IsPartOfPrefabAsset(obj))
 				{
 					if (!_processedAssets.Add(assetPath)) 

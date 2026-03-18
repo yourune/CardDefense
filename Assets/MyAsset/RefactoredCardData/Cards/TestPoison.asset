@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c95aa68f0082aa4fb77bb7659a01aa3, type: 3}
+  m_Name: TestPoison
+  m_EditorClassIdentifier: Assembly-CSharp::CardDefense.Cards.RefactoredCardData
+  Title: New Card
+  Description: make poison area for 20seconds. 2deal per tick
+  Image: {fileID: 21300090, guid: 7ab74e659e1f0a34d9cfec21c478fc12, type: 3}
+  CastImage: {fileID: 21300000, guid: a40eca0105a277c44976b48e8090fde5, type: 3}
+  ManaCost: 1
+  RequiresPositionTarget: 1
+  RequiresEntityTarget: 0
+  Effects:
+  - rid: 3102427295472156931
+  references:
+    version: 2
+    RefIds:
+    - rid: 3102427295472156931
+      type: {class: SpawnZoneEffect, ns: CardDefense.Core.Effects, asm: Assembly-CSharp}
+      data:
+        ZonePrefab: {fileID: 7334006660030800091, guid: b2e640d331645804d98c6227f04a47be, type: 3}
